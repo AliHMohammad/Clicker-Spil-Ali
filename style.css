@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    
+}
+
+#screen {
+    aspect-ratio: 16 / 9;
+}
+
+#game_background {
+    
+    width: 100vw;
+    height: 100vw;
+    background-image: url(./Media/Background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    "life timer score";
+
+    
+
+
+}
+
+.grid-item1 {
+    grid-area: life;
+    background-color: red;
+}
+
+.grid-item2 {
+    grid-area: timer;
+    background-color: yellow;
+}
+
+.grid-item3 {
+    grid-area: score;
+    background-color: green;
+}
+
+
+#start, #game_over, #level_complete {
+    display: hidden;
+}
