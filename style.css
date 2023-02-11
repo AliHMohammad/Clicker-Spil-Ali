@@ -7,6 +7,8 @@ body {
     aspect-ratio: 16 / 9;
 }
 
+
+
 #game_background {
     z-index: -1;
     position: abssolute;
@@ -19,6 +21,7 @@ body {
     background-size: 100%;
     opacity: 0.2;
 }
+
 
 .grid-container {
     display: grid;
