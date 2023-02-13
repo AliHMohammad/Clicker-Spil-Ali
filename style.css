@@ -68,21 +68,18 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 100%;
+
+    animation: AirOut 2s ease-in 1 forwards;
 }
 
 #unhealthy3_container img {
     position: absolute;
     z-index: 1;
-    top: 75%;
+    top: 45%;
     left: 5%;
     width: 50px;
     height: 50px;
     border-radius: 100%;
-
-
-    animation-name: Fly;
-    animation-duration: 3s;
-
 }
 
 
