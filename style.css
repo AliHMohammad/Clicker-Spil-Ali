@@ -1,4 +1,5 @@
 @import url("animations.css");
+@import url("game_clouds.css");
 
 body {
     margin: 0;
@@ -21,46 +22,52 @@ body {
     
 }
 
-#game_elements img {
-    outline: 1px solid orange;
-}
+
 
 
 /* Healthy */
 
-#healthy2_container img {
-    position: absolute;
-    z-index: 1;
-    top: 65%;
-    left: 35%;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-}
-
-#healthy1_container img {
+#Baloon1_container img {
     position: absolute;
     z-index: 1;
     top: 45%;
     left: 25%;
     width: 50px;
-    height: 50px;
+    height: 60px;
     border-radius: 100%;
+
+    animation: ScaleDown 0.7s ease-in-out  infinite  forwards;
 }
+
+#Baloon2_container img {
+    position: absolute;
+    z-index: 1;
+    top: 65%;
+    left: 35%;
+    width: 70px;
+    height: 80px;
+    border-radius: 100%;
+
+    animation: FlyUp 10s ease-in infinite forwards;
+}
+
+
 
 /* Unhealthy */
 
-#unhealthy1_container img {
+#AirBaloon1_container img {
     position: absolute;
     z-index: 1;
     top: 15%;
     left: 65%;
     width: 50px;
-    height: 50px;
+    height: 60px;
     border-radius: 100%;
+
+    animation: AirOut_DownRight 2s ease-in infinite forwards;
 }
 
-#unhealthy2_container img {
+#AirBaloon2_container img {
     position: absolute;
     z-index: 1;
     top: 25%;
@@ -72,7 +79,19 @@ body {
     animation: AirOut_DownLeft 2s ease-in infinite forwards;
 }
 
-#unhealthy3_container img {
+#AirBaloon3_container img {
+    position: absolute;
+    z-index: 1;
+    top: 73%;
+    left: 50%;
+    width: 40px;
+    height: 60px;
+    border-radius: 100%;
+
+    animation: FartLeft 1s linear infinite forwards;
+}
+
+#AirBomb_container img {
     position: absolute;
     z-index: 1;
     top: 45%;
@@ -80,7 +99,6 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 10%;
+
+    animation: Explosion 2s ease-out 1s infinite forwards;
 }
-
-
-
