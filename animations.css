@@ -32,6 +32,22 @@
   /*animation: Explosion 2s ease-out 1s 1 forwards;*/
 }
 
+
+@keyframes ScaleDown {
+    0% {
+        transform: scale(1);
+    } 30% {
+      transform: scale(1.1);  
+    } 100% {
+        transform: scale(0);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /*animation: BounceOut 0.5s ease-in-out  1  forwards;*/
+}
+
+
 @keyframes AirOut_DownLeft { 
     10% {
         transform: translate(-10px, -10px) rotate(-20deg)
@@ -75,23 +91,6 @@
     
     /*animation: AirOut_DownLeft 2s ease-in infinite forwards;*/
 }
-
-
-
-@keyframes ScaleDown {
-    0% {
-        transform: scale(1);
-    } 30% {
-      transform: scale(1.1);  
-    } 100% {
-        transform: scale(0);
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    /*animation: BounceOut 0.5s ease-in-out  1  forwards;*/
-}
-
 
 
 @keyframes AirOut_DownRight { 
