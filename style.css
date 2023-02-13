@@ -1,3 +1,5 @@
+@import url("animations.css");
+
 body {
     margin: 0;
     overflow: hidden;
@@ -8,37 +10,80 @@ body {
 }
 
 #game_background {
-    z-index: -100;
-    position: abssolute;
+    position: relative;
     width: 100%;
-    background-image: url(./Images/Background3.jpg);
-    background-repeat: no-repeat;
+    height: 100vw;
+    background-image: url(./Images/Background.jpg);
+    background-repeat: repeat-x;
     background-attachment: fixed;
     background-position: center;
     background-size: contain;
     
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100vh;
-}
-
-.grid-item2{
-    display: grid;
+#game_elements img {
+    outline: 1px solid orange;
 }
 
 
+/* Healthy */
 
+#healthy2_container img {
+    position: absolute;
+    z-index: 1;
+    top: 65%;
+    left: 35%;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
 
 #healthy1_container img {
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     top: 45%;
     left: 25%;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    outline: 1px solid orange;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
 }
+
+/* Unhealthy */
+
+#unhealthy1_container img {
+    position: absolute;
+    z-index: 1;
+    top: 15%;
+    left: 65%;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+#unhealthy2_container img {
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left: 75%;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+#unhealthy3_container img {
+    position: absolute;
+    z-index: 1;
+    top: 75%;
+    left: 5%;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+
+
+    animation-name: Fly;
+    animation-duration: 3s;
+
+}
+
+
+
