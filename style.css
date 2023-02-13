@@ -1,8 +1,4 @@
-@import url("animations.css");
-@import url("game_clouds.css");
-@import url("game_baloons.css");
-@import url("game_airbaloons.css");
-@import url("game.bombs.css");
+@import url("animations.css");@import url("game_clouds.css");@import url("game_baloons.css");@import url("game_airbaloons.css");@import url("game.bombs.css");
 
 body {
     margin: 0;

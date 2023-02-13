@@ -1,44 +1,112 @@
 
+/* Going right*/
 #Cloud1_container img {
     position: absolute;
     z-index: 2;
-    top: 35%;
+    top: 0.1%;
     left: -30%;
-    width: 240px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
     
-    animation: FlyRight 20s ease-in-out 0.5s infinite alternate;
+    animation: Fly 10s ease-in-out 0.5s infinite alternate;
+
+    --dist: 3000px;
+}
+
+#Cloud2_container img {
+    position: absolute;
+    z-index: 2;
+    top: 5%;
+    left: -40%;
+    width: 600px;
+    height: 250px;
+
+    --dist: 3000px;
+    
+    animation: Fly 20s ease-in-out 5s infinite alternate;
+
+    
+}
+
+#Cloud3_container img {
+    position: absolute;
+    z-index: 2;
+    top: 65%;
+    left: -30%;
+    width: 300px;
+    height: 180px;
+
+    --dist: 3000px;
+    
+    animation: Fly 7s ease-in-out 3s infinite alternate;
 }
 
 #Cloud4_container img {
     position: absolute;
     z-index: 2;
-    top: 15%;
-    left: -20%;
+    top: 75%;
+    left: -30%;
     width: 400px;
     height: 200px;
+
+    --dist: 3000px;
     
-    animation: FlyRight 10s ease-in-out 2s infinite alternate;
+    animation: Fly 4s ease-in-out 3s infinite alternate;
 }
 
+
+
+
+
+/* Going left*/
 #Cloud5_container img {
     position: absolute;
     z-index: 2;
-    top: 28%;
+    top: 25%;
     left: 130%;
     width: 400px;
     height: 200px;
     
-    animation: FlyLeft 14s ease-in-out 4s  infinite alternate;
+    animation: Fly 14s ease-in-out 4s  infinite alternate;
+
+   --dist: -3500px;
 }
 
 #Cloud6_container img {
     position: absolute;
     z-index: 2;
-    top: 68%;
+    top: 45%;
     left: 120%;
     width: 400px;
     height: 200px;
     
-    animation: FlyLeft 18s ease-in-out 1s  infinite alternate;
+    animation: Fly 18s ease-in-out 0.3s  infinite alternate;
+
+    --dist: -3500px;
+}
+
+#Cloud7_container img {
+    position: absolute;
+    z-index: 2;
+    top: 65%;
+    left: -30%;
+    width: 400px;
+    height: 200px;
+
+    --dist: -3500px;
+    
+    animation: Fly 7s ease-in-out 3s infinite alternate;
+}
+
+#Cloud8_container img {
+    position: absolute;
+    z-index: 2;
+    top: 85%;
+    left: -30%;
+    width: 400px;
+    height: 200px;
+
+    --dist: -3500px;
+    
+    animation: Fly 7s ease-in-out 3s infinite alternate;
 }

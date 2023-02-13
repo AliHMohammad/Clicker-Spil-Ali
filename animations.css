@@ -1,3 +1,7 @@
+:root {
+    --dist: 1px;
+}
+
 @keyframes FlyUp {
   100% {
     transform: translateY(-1000px);
@@ -5,6 +9,7 @@
   /* animation: FlyUp 10s ease-in 1 forwards;*/
 }
 
+/*
 @keyframes FlyRight {
     100% {
         transform: translateX(3000px);
@@ -16,6 +21,14 @@
         transform: translateX(-3500px);
     }
 }
+*/
+
+@keyframes Fly {
+    100% {
+        transform: translateX(var(--dist));
+    }
+}
+
 
 @keyframes Explosion {
   0% {
