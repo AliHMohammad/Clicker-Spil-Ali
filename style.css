@@ -69,7 +69,7 @@ body {
     height: 50px;
     border-radius: 100%;
 
-    
+    animation: AirOut_DownLeft 2s ease-in infinite forwards;
 }
 
 #unhealthy3_container img {

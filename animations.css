@@ -15,6 +15,7 @@
   } 100% {
     transform: scale(5.0);
     opacity: 0.0;
+    visibility: hidden;
   }
   /*animation: Explosion 2s ease-out 1s 1 forwards;*/
 }
@@ -57,14 +58,16 @@
     } 100% {
         transform: translate(-190px, 440px) rotate(-180deg);
         opacity: 0;
+        visibility: hidden;
     }
     
-    /*animation: AirOut 2s ease-in infinite forwards;*/
+    /*animation: AirOut_DownLeft 2s ease-in infinite forwards;*/
 }
 
 @keyframes Pop {
     100% {
         transform: scale(0);
+        visibility: hidden;
     }
     
 }
@@ -76,6 +79,7 @@
         transform: rotateY(240deg) scale(0.3);
     } 100% {
         transform: rotateY(360deg) scale(0);
+        visibility: hidden;
     }
 
     /*animation: Pop_and_Rotate 1.2s linear 1 both*/
