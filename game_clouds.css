@@ -13,20 +13,22 @@
     --dist: 110vw;
 }
 
-#Cloud2_container img {
+#Cloud2_container {
     position: absolute;
     z-index: 2;
     top: 5%;
-    left: -40%;
-    width: 600px;
-    height: 250px;
-
+    left: -60%;
     --dist: 110vw;
     
     animation: Fly 20s ease-in-out 5s infinite alternate;
-
-    
 }
+
+#Cloud2_sprite {
+    width: 600px;
+    height: 250px;
+}
+
+
 
 #Cloud3_container img {
     position: absolute;

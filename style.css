@@ -1,4 +1,4 @@
-@import url("animations.css");@import url("game_clouds.css");@import url("game_baloons.css");@import url("game_airbaloons.css");@import url("game.bombs.css");
+@import url("animations.css");@import url("game_clouds.css");@import url("game_baloons.css");@import url("game_airbaloons.css");@import url("game.bombs.css");@import url(game_UI.css);
 
 body {
     margin: 0;
@@ -6,6 +6,7 @@ body {
 }
 
 #screen {
+    width: 100%;
     aspect-ratio: 16 / 9;
     cursor:crosshair;
 }
@@ -19,6 +20,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-size: contain;
-    
 }
+
+
 
