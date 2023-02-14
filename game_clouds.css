@@ -16,7 +16,7 @@
 
 
 #Cloud2_container {
-    z-index: 2;
+    z-index: 3;
     top: 10%;
     left: -30%;
     width: 20%;
@@ -40,20 +40,21 @@
     
     animation: Fly 20s ease-in-out 3s infinite alternate;
 
-    --dist: 110vw;
+    --dist: 120vw;
 }
 
 
 
 #Cloud4_container  {
-    z-index: 2;
-    top: 80%;
+    z-index: 3;
+    top: 76%;
     left: -25%;
     width: 20%;
 
-    --dist: 125vw;
     
     animation: Fly 20s ease-in-out 3s infinite alternate;
+
+    --dist: 125vw;
 }
 
 
@@ -62,10 +63,11 @@
 
 /* Going left*/
 #Cloud5_container {
-    z-index: 2;
+    z-index: 3;
     bottom: 30%;
-    right: -50%;
+    right: -20%;
     width: 20%;
+
 
     animation: Fly 20s ease-in-out 4s  infinite alternate;
 
@@ -75,11 +77,12 @@
 
 
 #Cloud6_container {
-    z-index: 2;
+    z-index: 3;
     bottom: 45%;
-    right: -50%;
+    right: -20%;
     width: 20%;
     
+
     animation: Fly 20s ease-in-out 0.3s  infinite alternate;
 
     --dist: -125vw;
@@ -92,21 +95,22 @@
     right: -10%;
     width: 10%;
 
-    --dist: -120vw;
     
     animation: Fly 10s ease-in-out 1s infinite alternate;
+
+    --dist: -120vw;
 }
 
 
 #Cloud8_container {
-    
     z-index: 2;
-    top: 85%;
-    left: -30%;
+    bottom: 38%;
+    right: -20%;
     width: 10%;
 
-    --dist: -120vw;
     
-    animation: Fly 7s ease-in-out 3s infinite alternate;
+    animation: Fly 7s ease-in-out 2s infinite alternate;
+
+    --dist: -120vw;
 }
 

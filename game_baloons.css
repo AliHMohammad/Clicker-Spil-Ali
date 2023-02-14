@@ -2,25 +2,21 @@
 
 
 #Baloon1_container {
-    position: absolute;
     z-index: 1;
     top: 45%;
     left: 21%;
     width: 4%;
-    
     
 
     animation: ScaleDown 0.7s ease-in-out  infinite  forwards;
 }
 
 #Baloon2_container {
-    position: absolute;
     z-index: 1;
     top: 100%;
     left: 40%;
     width: 5%;
 
-    
 
     animation: FlyUp 10s ease-in infinite forwards;
 }
