@@ -2,6 +2,8 @@
     --dist: 100vw;
 }
 
+/* --------------------------GAME ELEMENTS--------------------------------*/
+
 @keyframes FlyUp {
   100% {
     transform: translateY(-100vh);
@@ -9,26 +11,11 @@
   /* animation: FlyUp 10s ease-in 1 forwards;*/
 }
 
-/*
-@keyframes FlyRight {
-    100% {
-        transform: translateX(3000px);
-    }
-}
-
-@keyframes FlyLeft {
-    100% {
-        transform: translateX(-3500px);
-    }
-}
-*/
-
 @keyframes Fly {
     100% {
         transform: translateX(var(--dist));
     }
 }
-
 
 @keyframes Explosion {
   0% {
@@ -45,7 +32,6 @@
   /*animation: Explosion 2s ease-out 1s 1 forwards;*/
 }
 
-
 @keyframes ScaleDown {
     0% {
         transform: scale(1);
@@ -59,7 +45,6 @@
 
     /*animation: BounceOut 0.5s ease-in-out  1  forwards;*/
 }
-
 
 @keyframes AirOut_DownLeft { 
     10% {
@@ -105,7 +90,6 @@
     /*animation: AirOut_DownLeft 2s ease-in infinite forwards;*/
 }
 
-
 @keyframes AirOut_DownRight { 
     10% {
         transform: translate(10px, -10px) rotate(20deg)
@@ -149,9 +133,6 @@
     
     /*animation: AirOut_DownRight 2s ease-in infinite forwards;*/
 }
-
-
-
 
 @keyframes FartRight {
     10% {
@@ -197,9 +178,26 @@
 
 
 
+/* --------------------------UI--------------------------------*/
 
 
-/* ----------------------------------------------------------*/
+@keyframes Shake {
+    0%, 100% {
+        transform: rotate(0deg);
+    } 25% {
+        transform: rotate(5deg);
+    } 50% {
+        transform: rotate(0deg);
+    } 75% {
+        transform: rotate(-5deg);
+    }
+}
+
+
+
+
+
+/* --------------------------OTHER--------------------------------*/
 
 
 

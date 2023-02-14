@@ -12,9 +12,6 @@
     --dist: 115vw;
 }
 
-
-
-
 #Cloud2_container {
     z-index: 3;
     top: 10%;
@@ -26,10 +23,6 @@
 
     --dist: 140vw;
 }
-
-
-
-
 
 #Cloud3_container  {
     z-index: 2;
@@ -43,8 +36,6 @@
     --dist: 120vw;
 }
 
-
-
 #Cloud4_container  {
     z-index: 3;
     top: 76%;
@@ -56,9 +47,6 @@
 
     --dist: 125vw;
 }
-
-
-
 
 
 /* Going left*/
@@ -74,8 +62,6 @@
    --dist: -125vw;
 }
 
-
-
 #Cloud6_container {
     z-index: 3;
     bottom: 45%;
@@ -88,7 +74,6 @@
     --dist: -125vw;
 }
 
-
 #Cloud7_container {
     z-index: 2;
     top: 65%;
@@ -100,7 +85,6 @@
 
     --dist: -120vw;
 }
-
 
 #Cloud8_container {
     z-index: 2;
