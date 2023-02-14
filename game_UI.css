@@ -1,0 +1,12 @@
+#life_board  {
+    scale: 0.1;
+    top: -10%;
+    left: 44%;
+}
+
+#time_board {
+    rotate: 90deg;
+    top: 0%;
+    left: 44%;
+    scale: 0.22 0.2;
+}

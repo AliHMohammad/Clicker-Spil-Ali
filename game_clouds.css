@@ -1,59 +1,59 @@
 
 /* Going right*/
-#Cloud1_container img {
-    position: absolute;
+#Cloud1_container {
     z-index: 2;
     top: 0.1%;
-    left: -30%;
-    width: 200px;
-    height: 150px;
+    left: -13%;
+    width: 10%;
     
-    animation: Fly 10s ease-in-out 0.5s infinite alternate;
+    
+    animation: Fly 20s ease-in-out 0.5s infinite alternate;
 
-    --dist: 110vw;
+    --dist: 115vw;
 }
+
+
+
 
 #Cloud2_container {
-    position: absolute;
     z-index: 2;
-    top: 5%;
-    left: -60%;
-    --dist: 110vw;
-    
-    animation: Fly 20s ease-in-out 5s infinite alternate;
-}
-
-#Cloud2_sprite {
-    width: 600px;
-    height: 250px;
-}
-
-
-
-#Cloud3_container img {
-    position: absolute;
-    z-index: 2;
-    top: 65%;
+    top: 10%;
     left: -30%;
-    width: 300px;
-    height: 180px;
-
-    --dist: 110vw;
+    width: 20%;
     
-    animation: Fly 7s ease-in-out 3s infinite alternate;
+    
+    animation: Fly 20s ease-in-out 1s infinite alternate;
+
+    --dist: 140vw;
 }
 
-#Cloud4_container img {
-    position: absolute;
+
+
+
+
+#Cloud3_container  {
     z-index: 2;
-    top: 75%;
-    left: -30%;
-    width: 400px;
-    height: 200px;
+    top: 23%;
+    left: -15%;
+    width: 10%;;
+
+    
+    animation: Fly 20s ease-in-out 3s infinite alternate;
 
     --dist: 110vw;
+}
+
+
+
+#Cloud4_container  {
+    z-index: 2;
+    top: 80%;
+    left: -25%;
+    width: 20%;
+
+    --dist: 125vw;
     
-    animation: Fly 4s ease-in-out 3s infinite alternate;
+    animation: Fly 20s ease-in-out 3s infinite alternate;
 }
 
 
@@ -61,54 +61,52 @@
 
 
 /* Going left*/
-#Cloud5_container img {
-    position: absolute;
+#Cloud5_container {
     z-index: 2;
-    top: 25%;
-    left: 130%;
-    width: 400px;
-    height: 200px;
-    
-    animation: Fly 14s ease-in-out 4s  infinite alternate;
+    bottom: 30%;
+    right: -50%;
+    width: 20%;
 
-   --dist: -120vw;
+    animation: Fly 20s ease-in-out 4s  infinite alternate;
+
+   --dist: -125vw;
 }
 
-#Cloud6_container img {
-    position: absolute;
-    z-index: 2;
-    top: 45%;
-    left: 120%;
-    width: 400px;
-    height: 200px;
-    
-    animation: Fly 18s ease-in-out 0.3s  infinite alternate;
 
-    --dist: -120vw;
+
+#Cloud6_container {
+    z-index: 2;
+    bottom: 45%;
+    right: -50%;
+    width: 20%;
+    
+    animation: Fly 20s ease-in-out 0.3s  infinite alternate;
+
+    --dist: -125vw;
 }
 
-#Cloud7_container img {
-    position: absolute;
+
+#Cloud7_container {
     z-index: 2;
     top: 65%;
-    left: -30%;
-    width: 400px;
-    height: 200px;
+    right: -10%;
+    width: 10%;
 
     --dist: -120vw;
     
-    animation: Fly 7s ease-in-out 3s infinite alternate;
+    animation: Fly 10s ease-in-out 1s infinite alternate;
 }
 
-#Cloud8_container img {
-    position: absolute;
+
+#Cloud8_container {
+    
     z-index: 2;
     top: 85%;
     left: -30%;
-    width: 400px;
-    height: 200px;
+    width: 10%;
 
     --dist: -120vw;
     
     animation: Fly 7s ease-in-out 3s infinite alternate;
 }
+

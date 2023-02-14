@@ -1,24 +1,20 @@
 
-#AirBomb_container img {
+#AirBomb_container  {
     position: absolute;
     z-index: 1;
     top: 45%;
     left: 5%;
-    width: 50px;
-    height: 50px;
+    width: 3%;
     
-
     animation: Explosion 2s ease-out 1s infinite forwards;
 }
 
-#AirBomb2_container img {
+#AirBomb2_container {
     position: absolute;
     z-index: 1;
     top: 75%;
     left: 85%;
-    width: 50px;
-    height: 50px;
+    width: 3%;
     
-
     animation: Explosion 2s ease-out 0.3s infinite forwards;
 }

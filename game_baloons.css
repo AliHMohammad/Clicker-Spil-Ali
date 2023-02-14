@@ -1,25 +1,25 @@
 
 
 
-#Baloon1_container img {
+#Baloon1_container {
     position: absolute;
     z-index: 1;
     top: 45%;
-    left: 25%;
-    width: 60px;
-    height: 60px;
+    left: 21%;
+    width: 4%;
+    
     
 
     animation: ScaleDown 0.7s ease-in-out  infinite  forwards;
 }
 
-#Baloon2_container img {
+#Baloon2_container {
     position: absolute;
     z-index: 1;
-    top: 65%;
-    left: 35%;
-    width: 70px;
-    height: 80px;
+    top: 100%;
+    left: 40%;
+    width: 5%;
+
     
 
     animation: FlyUp 10s ease-in infinite forwards;
