@@ -29,7 +29,7 @@ img {
     grid-area: 1 / 1;
     
     background-image: url(./Images/Background.jpg);
-    background-repeat: repeat;
+    background-repeat: repeat-x;
     background-attachment: fixed;
     background-position: center;
     background-size: contain;
