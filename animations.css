@@ -6,7 +6,7 @@
 
 @keyframes FlyUp {
   100% {
-    transform: translateY(-100vh);
+    transform: translateY(-130vh);
   }
   /* animation: FlyUp 10s ease-in 1 forwards;*/
 }
