@@ -28,12 +28,18 @@ img {
 #game_background {
     grid-area: 1 / 1;
     
-    background-image: url(./Images/Background.jpg);
+    background-image: url(./Ideer/Background2.jpg);
     background-repeat: repeat-x;
     background-attachment: fixed;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-color: blue;
+
+    /*
+    Original baggrund:
+    background-image: url(./Images/Background.jpg);
+    background-size: contain;
+    */
 
     /*animation: Shake 0.1s linear 0s 15;*/
 }
