@@ -5,16 +5,10 @@ document.querySelector("#Baloon1_sprite").addEventListener("click", pop1);
 document.querySelector("#Baloon2_sprite").addEventListener("click", pop2);
 document.querySelector("#Baloon3_sprite").addEventListener("click", pop3);
 
-document
-  .querySelector("#AirBaloon1_sprite")
-  .addEventListener("click", airOutDR);
-document
-  .querySelector("#AirBaloon2_sprite")
-  .addEventListener("click", airOutDL);
+document.querySelector("#AirBaloon1_sprite").addEventListener("click", airOutDR);
+document.querySelector("#AirBaloon2_sprite").addEventListener("click", airOutDL);
 document.querySelector("#AirBaloon3_sprite").addEventListener("click", fartLeft);
 document.querySelector("#AirBaloon4_sprite").addEventListener("click", fartRight);
-
-
 
 document.querySelector("#AirBomb_sprite").addEventListener("click", Boom);
 

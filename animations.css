@@ -3,7 +3,7 @@
 
 @keyframes FlyUp {
   100% {
-    transform: translateY(-56.25vw);
+    transform: translateY(-60vw);
   }
   /* animation: FlyUp 12s ease-in infinite forwards*/
 }
