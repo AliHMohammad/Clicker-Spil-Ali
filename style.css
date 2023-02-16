@@ -53,10 +53,6 @@ img {
     overflow: hidden;
 }
 
-.absolute {
-    position: absolute;
-}
-
 #game_ui > img {
     z-index: 99;
     width: 100%;

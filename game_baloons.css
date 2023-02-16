@@ -6,9 +6,9 @@
     top: 45%;
     left: 21%;
     width: 4%;
-    
+    position: absolute;
 
-    animation: ScaleDown 0.7s ease-in-out infinite forwards;
+    
 }
 
 #Baloon2_container {
@@ -16,9 +16,9 @@
     top: 100%;
     left: 40%;
     width: 5%;
+    position: absolute;
 
-
-    animation: FlyUp 12s ease-in infinite forwards;
+    
 }
 
 #Baloon3_container {
@@ -26,6 +26,6 @@
     top: 100%;
     left: 50%;
     width: 4%;
-
-    animation: FlyUp 12s ease-in 4s infinite forwards;
+    position: absolute;
+    
 }

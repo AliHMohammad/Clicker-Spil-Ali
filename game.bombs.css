@@ -4,8 +4,7 @@
     top: 45%;
     left: 5%;
     width: 3%;
-    
-    animation: Explosion 2s ease-out 1s infinite forwards;
+    position: absolute;
 }
 
 #AirBomb2_container {
@@ -13,6 +12,5 @@
     top: 75%;
     left: 85%;
     width: 3%;
-    
-    animation: Explosion 2s ease-out 0.3s infinite forwards;
+    position: absolute;
 }

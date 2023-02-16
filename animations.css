@@ -1,12 +1,8 @@
-:root {
-    --dist: 100vw;
-}
-
-/* --------------------------GAME ELEMENTS--------------------------------*/
-
 .paused {
     animation-play-state: paused;
 }
+
+/* --------------------------GAME ELEMENTS--------------------------------*/
 
 @keyframes FlyUp {
   100% {
@@ -19,15 +15,7 @@
     animation: FlyUp 12s ease-in infinite forwards
 }
 
-@keyframes Fly {
-    100% {
-        transform: translateX(var(--dist));
-    }
-}
 
-.Fly {
-    animation: Fly 20s ease-in-out 0.3s  infinite alternate;
-}
 
 @keyframes FlyRight {
     100% {
@@ -36,7 +24,7 @@
 }
 
 .FlyRight {
-    animation: Fly 20s ease-in-out 0.3s  infinite alternate;
+    animation: FlyRight 20s ease-in-out 0.3s  infinite alternate;
 }
 
 @keyframes FlyLeft {
@@ -46,7 +34,7 @@
 }
 
 .FlyLeft {
-    animation: Fly 20s ease-in-out 0.3s  infinite alternate;
+    animation: FlyLeft 20s ease-in-out 0.3s  infinite alternate;
 }
 
 
@@ -61,8 +49,8 @@
   } 100% {
     transform: scale(6.0);
     opacity: 0.0;
-    visibility: hidden;
   }
+
   /*animation: Explosion 2s ease-out 0.3s infinite forwards;*/
 }
 
@@ -78,7 +66,6 @@
     } 100% {
         transform: scale(0);
         opacity: 0;
-        visibility: hidden;
     }
 
     /*animation: ScaleDown 0.7s ease-in-out infinite forwards;*/
@@ -126,7 +113,6 @@
     } 100% {
         transform: translate(-190px, 440px) rotate(-180deg) scale(0.5);
         opacity: 0;
-        visibility: hidden;
     }
     
     /*animation: AirOut_DownLeft 2s ease-in infinite forwards;*/
@@ -174,7 +160,6 @@
     } 100% {
         transform: translate(190px, 440px) rotate(180deg) scale(0.5);
         opacity: 0;
-        visibility: hidden;
     }
     
     /*animation: AirOut_DownRight 2s ease-in infinite forwards;*/
@@ -200,7 +185,6 @@
     } 100% {
         transform: translate(300px, -112px) rotate(85deg) scale(0.3);
         opacity: 0;
-        visibility: hidden;
     }
 
     /*animation: FartRight 1s linear infinite forwards;*/
@@ -227,7 +211,6 @@
     } 100% {
         transform: translate(-300px, -112px) rotate(-85deg) scale(0.3);
         opacity: 0;
-        visibility: hidden;
     }
 
     /*animation: FartLeft 1s linear infinite forwards;*/
