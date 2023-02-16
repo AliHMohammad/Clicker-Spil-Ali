@@ -20,3 +20,12 @@
 
     animation: FlyUp 12s ease-in infinite forwards;
 }
+
+#Baloon3_container {
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    width: 4%;
+
+    animation: FlyUp 12s ease-in 4s infinite forwards;
+}
