@@ -22,3 +22,11 @@
 
     
 }
+
+#score_counter {
+    z-index: 100;
+    position: fixed;
+    bottom: 22%;
+    right: 5.5%;
+    scale: 2;
+}

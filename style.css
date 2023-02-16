@@ -58,3 +58,10 @@ img {
     width: 100%;
     position: absolute;
 }
+
+
+
+
+.paused {
+    animation-play-state: paused;
+}
