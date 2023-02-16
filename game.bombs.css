@@ -1,16 +1,9 @@
 
 #AirBomb_container  {
     z-index: 1;
-    top: 45%;
-    left: 5%;
+    top: 100%;
+    left: 55%;
     width: 3%;
     position: absolute;
 }
 
-#AirBomb2_container {
-    z-index: 1;
-    top: 75%;
-    left: 85%;
-    width: 3%;
-    position: absolute;
-}

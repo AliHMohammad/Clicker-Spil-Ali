@@ -3,7 +3,7 @@
 
 #Baloon1_container {
     z-index: 1;
-    top: 45%;
+    top: 100%;
     left: 21%;
     width: 4%;
     position: absolute;
@@ -24,7 +24,7 @@
 #Baloon3_container {
     z-index: 1;
     top: 100%;
-    left: 50%;
+    left: 10%;
     width: 4%;
     position: absolute;
     
