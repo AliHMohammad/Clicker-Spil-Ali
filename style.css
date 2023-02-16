@@ -49,6 +49,10 @@ img {
     position: relative;
 }
 
+#game_elements{
+    overflow: hidden;
+}
+
 .absolute {
     position: absolute;
 }
