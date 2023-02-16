@@ -242,58 +242,16 @@
     animation: Shake 0.1s linear 0s 15;
 }
 
-
-
-
-
-/* --------------------------OTHER--------------------------------*/
-
-
-
-
-
-
-
-@keyframes Pop_and_Rotate {
-    33% {
-        transform: rotateY(120deg) scale(0.7);
-    } 66% {
-        transform: rotateY(240deg) scale(0.3);
-    } 100% {
-        transform: rotateY(360deg) scale(0);
-        visibility: hidden;
-    }
-
-    /*animation: Pop_and_Rotate 1.2s linear 1 both*/
-}
-
-
-
-@keyframes Rotate {
-    33% {
-        transform: rotateY(120deg);
-    } 66% {
-        transform: rotateY(240deg);
+@keyframes Timer {
+    100% {
+        transform: scaleY(0%);
         
-    } 100% {
-        transform: rotateY(360deg);
     }
-
-    /*animation: Rotate 1s linear 2 forwards,
-               Disappear 2s linear 1 forwards;*/
-
 }
 
-@keyframes Disappear {
-    33% {
-        opacity: 0.6;
-    } 66% {
-        opacity: 0.3;
-    } 100% {
-        opacity: 0;
-    }
-
-    /*animation: Rotate 1s linear 2 forwards,
-               Disappear 2s linear 1 forwards;*/
+.Timer {
+    animation-name: Timer;
+    animation-duration: 30s;
+    animation-direction: reverse;
+    animation-timing-function: linear;
 }
-
