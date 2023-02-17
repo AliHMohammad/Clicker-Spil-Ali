@@ -5,10 +5,18 @@ document.querySelector("#Baloon1_sprite").addEventListener("click", pop1);
 document.querySelector("#Baloon2_sprite").addEventListener("click", pop2);
 document.querySelector("#Baloon3_sprite").addEventListener("click", pop3);
 
-document.querySelector("#AirBaloon1_sprite").addEventListener("click", airOutDR);
-document.querySelector("#AirBaloon2_sprite").addEventListener("click", airOutDL);
-document.querySelector("#AirBaloon3_sprite").addEventListener("click", fartLeft);
-document.querySelector("#AirBaloon4_sprite").addEventListener("click", fartRight);
+document
+  .querySelector("#AirBaloon1_sprite")
+  .addEventListener("click", airOutDR);
+document
+  .querySelector("#AirBaloon2_sprite")
+  .addEventListener("click", airOutDL);
+document
+  .querySelector("#AirBaloon3_sprite")
+  .addEventListener("click", fartLeft);
+document
+  .querySelector("#AirBaloon4_sprite")
+  .addEventListener("click", fartRight);
 
 document.querySelector("#AirBomb_sprite").addEventListener("click", Boom);
 
@@ -33,60 +41,49 @@ function pop3() {
   sprite.classList.add("Pop");
 }
 
-
 function airOutDR() {
-    const container = document.querySelector("#AirBaloon1_container");
-    const sprite = document.querySelector("#AirBaloon1_sprite");
-    container.classList.add("paused");
-    sprite.classList.add("AirOut_DownRight");
+  const container = document.querySelector("#AirBaloon1_container");
+  const sprite = document.querySelector("#AirBaloon1_sprite");
+  container.classList.add("paused");
+  sprite.classList.add("AirOut_DownRight");
 
-    hearts--;
+  hearts--;
 
-    lose();
+  gameStatus();
 }
 
 function airOutDL() {
-    const container = document.querySelector("#AirBaloon2_container");
-    const sprite = document.querySelector("#AirBaloon2_sprite");
-    container.classList.add("paused");
-    sprite.classList.add("AirOut_DownLeft");
+  const container = document.querySelector("#AirBaloon2_container");
+  const sprite = document.querySelector("#AirBaloon2_sprite");
+  container.classList.add("paused");
+  sprite.classList.add("AirOut_DownLeft");
 
-    hearts--;
+  hearts--;
 
-    lose();
+  gameStatus();
 }
 
 function fartLeft() {
-    const container = document.querySelector("#AirBaloon3_container");
-    const sprite = document.querySelector("#AirBaloon3_sprite");
-    container.classList.add("paused");
-    sprite.classList.add("FartLeft");
+  const container = document.querySelector("#AirBaloon3_container");
+  const sprite = document.querySelector("#AirBaloon3_sprite");
+  container.classList.add("paused");
+  sprite.classList.add("FartLeft");
 
-    hearts--;
+  hearts--;
 
-    lose();
+  gameStatus();
 }
 
 function fartRight() {
-    const container = document.querySelector("#AirBaloon4_container");
-    const sprite = document.querySelector("#AirBaloon4_sprite");
-    container.classList.add("paused");
-    sprite.classList.add("FartRight");
+  const container = document.querySelector("#AirBaloon4_container");
+  const sprite = document.querySelector("#AirBaloon4_sprite");
+  container.classList.add("paused");
+  sprite.classList.add("FartRight");
 
-    hearts--;
+  hearts--;
 
-    lose();
+  gameStatus();
 }
-
-
-
-
-
-
-
-
-
-
 
 function Boom() {
   const container = document.querySelector("#AirBomb_container");
@@ -105,14 +102,10 @@ function Boom() {
 
   hearts = -3;
 
-  lose();
+  gameStatus();
 }
 
-
-
-
-
-function lose() {
+function gameStatus() {
   if (hearts == 2) {
     heartImage.src = "./UI/HealthTwo.png";
   } else if (hearts == 1) {
