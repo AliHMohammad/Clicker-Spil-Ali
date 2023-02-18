@@ -1,4 +1,4 @@
-@import url("animations.css");@import url("game_clouds.css");@import url("game_baloons.css");@import url("game_airbaloons.css");@import url("game.bombs.css");@import url(game_UI.css);
+@import url("animations.css");@import url("game_clouds.css");@import url("game_baloons.css");@import url("game_airbaloons.css");@import url("game.bombs.css");@import url(game_UI.css);@import url(start.css);
 
 body {
     margin: 0;
@@ -59,7 +59,9 @@ img {
 }
 
 
-
+.hidden {
+    display: none;
+}
 
 .paused {
     animation-play-state: paused;

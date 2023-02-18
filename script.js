@@ -1,77 +1,94 @@
 let hearts = 3;
 let score = 0;
+
+
+
+
+
+
+
+
+/*==================== ELEMENT VARIABLES =========================*/
+
+const baloon1Sprite = document.querySelector("#Baloon1_sprite");
+const baloon2Sprite = document.querySelector("#Baloon2_sprite");
+const baloon3Sprite = document.querySelector("#Baloon3_sprite");
+
+const baloon1Container = document.querySelector("#Baloon1_container");
+const baloon2Container = document.querySelector("#Baloon2_container");
+const baloon3Container = document.querySelector("#Baloon3_container");
+
+const airBaloon1Sprite = document.querySelector("#AirBaloon1_sprite");
+const airBaloon2Sprite = document.querySelector("#AirBaloon2_sprite");
+const airBaloon3Sprite = document.querySelector("#AirBaloon3_sprite");
+const airBaloon4Sprite = document.querySelector("#AirBaloon4_sprite");
+
+const airBaloon1Container = document.querySelector("#AirBaloon1_container");
+const airBaloon2Container = document.querySelector("#AirBaloon2_container");
+const airBaloon3Container = document.querySelector("#AirBaloon3_container");
+const airBaloon4Container = document.querySelector("#AirBaloon4_container");
+
+const airBombSprite = document.querySelector("#AirBomb_sprite")
+
+const airBombContainer = document.querySelector("#AirBomb_container")
+
+const timer = document.querySelector("#blackBar");
 const heartImage = document.getElementById("life_board");
 
-document.querySelector("#blackBar").addEventListener("animationed", timerEnd);
+
+/*==================== EVENTS =========================*/
 
 
-document.querySelector("#Baloon1_sprite").addEventListener("click", pop1);
-document.querySelector("#Baloon2_sprite").addEventListener("click", pop2);
-document.querySelector("#Baloon3_sprite").addEventListener("click", pop3);
+baloon1Sprite.addEventListener("click", pop1);
+baloon2Sprite.addEventListener("click", pop2);
+baloon3Sprite.addEventListener("click", pop3);
 
-document
-  .querySelector("#AirBaloon1_sprite")
-  .addEventListener("click", airOutDR);
-document
-  .querySelector("#AirBaloon2_sprite")
-  .addEventListener("click", airOutDL);
-document
-  .querySelector("#AirBaloon3_sprite")
-  .addEventListener("click", fartLeft);
-document
-  .querySelector("#AirBaloon4_sprite")
-  .addEventListener("click", fartRight);
+airBaloon1Sprite.addEventListener("click", airOutDR);
+airBaloon2Sprite.addEventListener("click", airOutDL);
+airBaloon3Sprite.addEventListener("click", fartLeft);
+airBaloon4Sprite.addEventListener("click", fartRight);
 
-document.querySelector("#AirBomb_sprite").addEventListener("click", Boom);
+airBombSprite.addEventListener("click", Boom);
+
+timer.addEventListener("animationed", timerEnd);
 
 
-
-
-/*==================== CLICK ANIMATIONS =========================*/
+/*==================== CLICK FUNCTIONS =========================*/
 
 function pop1() {
-  const container = document.querySelector("#Baloon1_container");
-  const sprite = document.querySelector("#Baloon1_sprite");
-  container.classList.add("paused");
-  sprite.classList.add("Pop");
-
+  baloon1Container.classList.add("paused");
+  baloon1Sprite.classList.add("Pop");
+  
   scoreStatus();
 }
 
 function pop2() {
-  const container = document.querySelector("#Baloon2_container");
-  const sprite = document.querySelector("#Baloon2_sprite");
-  container.classList.add("paused");
-  sprite.classList.add("Pop");
+  baloon2Container.classList.add("paused");
+  baloon2Sprite.classList.add("Pop");
+  
 
   scoreStatus();
 }
 
 function pop3() {
-  const container = document.querySelector("#Baloon3_container");
-  const sprite = document.querySelector("#Baloon3_sprite");
-  container.classList.add("paused");
-  sprite.classList.add("Pop");
+  baloon3Container.classList.add("paused");
+  baloon3Sprite.classList.add("Pop");
 
   scoreStatus();
 }
 
 function airOutDR() {
-  const container = document.querySelector("#AirBaloon1_container");
-  const sprite = document.querySelector("#AirBaloon1_sprite");
-  container.classList.add("paused");
-  sprite.classList.add("AirOut_DownRight");
-
+  airBaloon1Container.classList.add("paused");
+  airBaloon1Sprite.classList.add("AirOut_DownRight");
+  
   hearts--;
 
   gameStatus();
 }
 
 function airOutDL() {
-  const container = document.querySelector("#AirBaloon2_container");
-  const sprite = document.querySelector("#AirBaloon2_sprite");
-  container.classList.add("paused");
-  sprite.classList.add("AirOut_DownLeft");
+  airBaloon2Container.classList.add("paused");
+  airBaloon2Sprite.classList.add("AirOut_DownLeft");
 
   hearts--;
 
@@ -79,10 +96,8 @@ function airOutDL() {
 }
 
 function fartLeft() {
-  const container = document.querySelector("#AirBaloon3_container");
-  const sprite = document.querySelector("#AirBaloon3_sprite");
-  container.classList.add("paused");
-  sprite.classList.add("FartLeft");
+  airBaloon3Container.classList.add("paused");
+  airBaloon3Sprite.classList.add("FartLeft");
 
   hearts--;
 
@@ -90,10 +105,8 @@ function fartLeft() {
 }
 
 function fartRight() {
-  const container = document.querySelector("#AirBaloon4_container");
-  const sprite = document.querySelector("#AirBaloon4_sprite");
-  container.classList.add("paused");
-  sprite.classList.add("FartRight");
+  airBaloon4Container.classList.add("paused");
+  airBaloon4Sprite.classList.add("FartRight");
 
   hearts--;
 
@@ -101,16 +114,13 @@ function fartRight() {
 }
 
 function Boom() {
-  const container = document.querySelector("#AirBomb_container");
-  const sprite = document.querySelector("#AirBomb_sprite");
-
-  container.classList.add("paused");
-  sprite.classList.add("Explosion");
+  airBombContainer.classList.add("paused");
+  airBombSprite.classList.add("Explosion");
 
   document.querySelector("#life_board").classList.add("Shake");
   document.querySelector("#time_board").classList.add("Shake");
   document.querySelector("#score_board").classList.add("Shake");
-  document.querySelector("#blackBar").classList.add("Shake");
+  timer.classList.add("Shake");
   document.querySelector("#score_counter").classList.add("Shake");
   document.querySelector("#game_background").classList.add("Shake");
 
@@ -146,7 +156,64 @@ function gameStatus() {
   } else if (hearts <= 0) {
     heartImage.src = "./UI/HealthZero.png";
     heartImage.classList.add("pulse_0hearts");
-    document.querySelector("#blackBar").classList.add("paused");
+    timer.classList.add("paused");
     //Game over shows up.
   }
 }
+
+
+
+
+
+
+
+
+
+/*-------------------------------------*/
+
+document.querySelector("#start_button").addEventListener("click", function () {
+  document.querySelector("#start").classList.add("hidden");
+
+  startGame();
+})
+
+
+
+
+
+
+/*==================== GAME INITIATE =========================*/
+
+function startGame() {
+  baloon1Container.classList.add("FlyUp");
+  baloon2Container.classList.add("FlyUp")
+  baloon3Container.classList.add("FlyUp")
+  airBaloon1Container.classList.add("FlyUp");
+  airBaloon2Container.classList.add("FlyUp");
+  airBaloon3Container.classList.add("FlyUp");
+  airBaloon4Container.classList.add("FlyUp");
+  airBombContainer.classList.add("FlyUp");
+
+  timer.classList.add("Timer")
+  heartImage.classList.add("pulse")
+
+
+  /*Clouds*/
+  document.querySelector("#Cloud1_container").classList.add("FlyRight");
+  document.querySelector("#Cloud2_container").classList.add("FlyRight");
+  document.querySelector("#Cloud3_container").classList.add("FlyRight");
+  document.querySelector("#Cloud4_container").classList.add("FlyRight");
+  document.querySelector("#Cloud5_container").classList.add("FlyLeft");
+  document.querySelector("#Cloud6_container").classList.add("FlyLeft");
+  document.querySelector("#Cloud7_container").classList.add("FlyLeft");
+  document.querySelector("#Cloud8_container").classList.add("FlyLeft");
+
+  
+
+
+
+
+
+
+}
+

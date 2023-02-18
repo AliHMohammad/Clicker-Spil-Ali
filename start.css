@@ -1,0 +1,53 @@
+
+#start {
+    z-index: 100;
+    grid-area: 1 / 1;
+    background-image: url(./Images/Background.jpg);
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+
+
+#start_button{
+    top: 60%;
+    width: 30%;
+    position: relative;
+    left: 36%;
+    z-index: 5;
+}
+
+#help_button{
+    top: 75%;
+    left: 11%;
+    width: 20%;
+    position: relative;
+}
+
+#start_button:hover, #help_button:hover{
+    scale: 0.9;
+}
+
+
+/*
+#start-menu {
+    position: relative;
+    
+    top: 30%;
+    left: 40%;
+
+    width: 40%;
+    height: 40%;
+    background-color: aqua;
+    z-index: 200;
+}
+*/
+
+
+
+
+
+
+
+#start p {
+    font-size: 50px;
+}
