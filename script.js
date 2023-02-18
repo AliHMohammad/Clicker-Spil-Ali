@@ -1,14 +1,8 @@
-let hearts = 3;
-let score = 0;
-
-
-
-
-
-
-
 
 /*==================== ELEMENT VARIABLES =========================*/
+
+let hearts = 3;
+let score = 0;
 
 const baloon1Sprite = document.querySelector("#Baloon1_sprite");
 const baloon2Sprite = document.querySelector("#Baloon2_sprite");
@@ -34,6 +28,36 @@ const airBombContainer = document.querySelector("#AirBomb_container")
 
 const timer = document.querySelector("#blackBar");
 const heartImage = document.getElementById("life_board");
+
+
+
+/*==================== GAME INITIATE =========================*/
+
+function startGame() {
+  baloon1Container.classList.add("FlyUp");
+  baloon2Container.classList.add("FlyUp")
+  baloon3Container.classList.add("FlyUp")
+  airBaloon1Container.classList.add("FlyUp");
+  airBaloon2Container.classList.add("FlyUp");
+  airBaloon3Container.classList.add("FlyUp");
+  airBaloon4Container.classList.add("FlyUp");
+  airBombContainer.classList.add("FlyUp");
+
+  timer.classList.add("Timer")
+  heartImage.classList.add("pulse")
+
+
+  /*Clouds*/
+  document.querySelector("#Cloud1_container").classList.add("FlyRight");
+  document.querySelector("#Cloud2_container").classList.add("FlyRight");
+  document.querySelector("#Cloud3_container").classList.add("FlyRight");
+  document.querySelector("#Cloud4_container").classList.add("FlyRight");
+  document.querySelector("#Cloud5_container").classList.add("FlyLeft");
+  document.querySelector("#Cloud6_container").classList.add("FlyLeft");
+  document.querySelector("#Cloud7_container").classList.add("FlyLeft");
+  document.querySelector("#Cloud8_container").classList.add("FlyLeft");
+
+}
 
 
 /*==================== EVENTS =========================*/
@@ -163,13 +187,7 @@ function gameStatus() {
 
 
 
-
-
-
-
-
-
-/*-------------------------------------*/
+/*==================== START SCREEN =========================*/
 
 document.querySelector("#start_button").addEventListener("click", function () {
   document.querySelector("#start").classList.add("hidden");
@@ -182,38 +200,5 @@ document.querySelector("#start_button").addEventListener("click", function () {
 
 
 
-/*==================== GAME INITIATE =========================*/
 
-function startGame() {
-  baloon1Container.classList.add("FlyUp");
-  baloon2Container.classList.add("FlyUp")
-  baloon3Container.classList.add("FlyUp")
-  airBaloon1Container.classList.add("FlyUp");
-  airBaloon2Container.classList.add("FlyUp");
-  airBaloon3Container.classList.add("FlyUp");
-  airBaloon4Container.classList.add("FlyUp");
-  airBombContainer.classList.add("FlyUp");
-
-  timer.classList.add("Timer")
-  heartImage.classList.add("pulse")
-
-
-  /*Clouds*/
-  document.querySelector("#Cloud1_container").classList.add("FlyRight");
-  document.querySelector("#Cloud2_container").classList.add("FlyRight");
-  document.querySelector("#Cloud3_container").classList.add("FlyRight");
-  document.querySelector("#Cloud4_container").classList.add("FlyRight");
-  document.querySelector("#Cloud5_container").classList.add("FlyLeft");
-  document.querySelector("#Cloud6_container").classList.add("FlyLeft");
-  document.querySelector("#Cloud7_container").classList.add("FlyLeft");
-  document.querySelector("#Cloud8_container").classList.add("FlyLeft");
-
-  
-
-
-
-
-
-
-}
 
