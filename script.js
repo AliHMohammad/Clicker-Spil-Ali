@@ -111,7 +111,6 @@ function Boom() {
   document.querySelector("#time_board").classList.add("Shake");
   document.querySelector("#score_board").classList.add("Shake");
   document.querySelector("#blackBar").classList.add("Shake");
-  document.querySelector("#blackBar").classList.add("paused");
   document.querySelector("#score_counter").classList.add("Shake");
   document.querySelector("#game_background").classList.add("Shake");
 
@@ -147,6 +146,7 @@ function gameStatus() {
   } else if (hearts <= 0) {
     heartImage.src = "./UI/HealthZero.png";
     heartImage.classList.add("pulse_0hearts");
+    document.querySelector("#blackBar").classList.add("paused");
     //Game over shows up.
   }
 }
