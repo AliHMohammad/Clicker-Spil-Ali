@@ -243,12 +243,14 @@
 }
 
 @keyframes Timer {
-    100% {
-        transform: scaleY(0%);
-        
+    0% {
+        transform: rotateX(0deg);       
+    } 100% {
+        transform: rotateX(90deg);
     }
 }
 
 .Timer {
-    animation: Timer 30s linear 1 reverse forwards;
+    animation: Timer 60s linear 1 reverse forwards;
+    transform-origin: top center;
 }

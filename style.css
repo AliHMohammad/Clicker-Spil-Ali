@@ -29,7 +29,7 @@ img {
     grid-area: 1 / 1;
     
     background-image: url(./Ideer/Background2.jpg);
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
