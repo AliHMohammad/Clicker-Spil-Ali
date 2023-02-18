@@ -38,3 +38,15 @@
     
 }
 
+#restart {
+    top: -29%;
+    left: 44%;
+    scale: 0.09;
+}
+
+#restart:hover {
+    scale: 0.1;
+}
+
+
+

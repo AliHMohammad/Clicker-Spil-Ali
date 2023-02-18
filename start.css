@@ -1,15 +1,17 @@
 
 #start {
-    z-index: 100;
+    z-index: 101;
     grid-area: 1 / 1;
     background-image: url(./Images/Background.jpg);
-    background-repeat:no-repeat;
-    background-size: contain;
+    background-repeat:repeat-y;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 
 #start_button{
-    top: 60%;
+    top: 50%;
     width: 30%;
     position: relative;
     left: 36%;
@@ -17,7 +19,7 @@
 }
 
 #help_button{
-    top: 75%;
+    top: 65%;
     left: 11%;
     width: 20%;
     position: relative;

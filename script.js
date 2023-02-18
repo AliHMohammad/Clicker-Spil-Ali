@@ -27,7 +27,9 @@ const airBombSprite = document.querySelector("#AirBomb_sprite")
 const airBombContainer = document.querySelector("#AirBomb_container")
 
 const timer = document.querySelector("#blackBar");
-const heartImage = document.getElementById("life_board");
+const heartImage = document.querySelector("#life_board");
+
+const restart = document.querySelector("#restart");
 
 
 
@@ -75,6 +77,9 @@ airBaloon4Sprite.addEventListener("click", fartRight);
 airBombSprite.addEventListener("click", Boom);
 
 timer.addEventListener("animationed", timerEnd);
+
+
+restart.addEventListener("click", startGame);
 
 
 /*==================== CLICK FUNCTIONS =========================*/
@@ -171,7 +176,12 @@ function scoreStatus() {
 }
 
 function gameStatus() {
-  if (hearts == 2) {
+
+
+  if (hearts == 3) {
+    heartImage.src = "./UI/HealthThree.png";
+    heartImage.classList.add("pulse");
+  } else if (hearts == 2) {
     heartImage.src = "./UI/HealthTwo.png";
     heartImage.classList.add("pulse_2hearts");
   } else if (hearts == 1) {
