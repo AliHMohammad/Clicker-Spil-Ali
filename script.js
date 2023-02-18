@@ -7,15 +7,18 @@ let score = 0;
 const baloon1Sprite = document.querySelector("#Baloon1_sprite");
 const baloon2Sprite = document.querySelector("#Baloon2_sprite");
 const baloon3Sprite = document.querySelector("#Baloon3_sprite");
+const baloon4Sprite = document.querySelector("#Baloon4_sprite");
 
 const baloon1Container = document.querySelector("#Baloon1_container");
 const baloon2Container = document.querySelector("#Baloon2_container");
 const baloon3Container = document.querySelector("#Baloon3_container");
+const baloon4Container = document.querySelector("#Baloon4_container");
 
 const airBaloon1Sprite = document.querySelector("#AirBaloon1_sprite");
 const airBaloon2Sprite = document.querySelector("#AirBaloon2_sprite");
 const airBaloon3Sprite = document.querySelector("#AirBaloon3_sprite");
 const airBaloon4Sprite = document.querySelector("#AirBaloon4_sprite");
+
 
 const airBaloon1Container = document.querySelector("#AirBaloon1_container");
 const airBaloon2Container = document.querySelector("#AirBaloon2_container");
@@ -39,6 +42,7 @@ function startGame() {
   baloon1Container.classList.add("FlyUp");
   baloon2Container.classList.add("FlyUp")
   baloon3Container.classList.add("FlyUp")
+  baloon4Container.classList.add("FlyUp");
   airBaloon1Container.classList.add("FlyUp");
   airBaloon2Container.classList.add("FlyUp");
   airBaloon3Container.classList.add("FlyUp");
@@ -68,6 +72,7 @@ function startGame() {
 baloon1Sprite.addEventListener("click", pop1);
 baloon2Sprite.addEventListener("click", pop2);
 baloon3Sprite.addEventListener("click", pop3);
+baloon4Sprite.addEventListener("click", pop4);
 
 airBaloon1Sprite.addEventListener("click", airOutDR);
 airBaloon2Sprite.addEventListener("click", airOutDL);
@@ -102,6 +107,13 @@ function pop2() {
 function pop3() {
   baloon3Container.classList.add("paused");
   baloon3Sprite.classList.add("Pop");
+
+  scoreStatus();
+}
+
+function pop4() {
+  baloon4Container.classList.add("paused");
+  baloon4Sprite.classList.add("Pop");
 
   scoreStatus();
 }

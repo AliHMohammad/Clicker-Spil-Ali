@@ -27,5 +27,12 @@
     left: 10%;
     width: 4%;
     position: absolute;
-    
+}
+
+#Baloon4_container {
+    z-index: 1;
+    top: 100%;
+    left: 80%;
+    width: 4%;
+    position: absolute;
 }
