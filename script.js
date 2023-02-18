@@ -1,5 +1,9 @@
 let hearts = 3;
+let score = 0;
 const heartImage = document.getElementById("life_board");
+
+document.querySelector("#blackBar").addEventListener("animationed", timerEnd);
+
 
 document.querySelector("#Baloon1_sprite").addEventListener("click", pop1);
 document.querySelector("#Baloon2_sprite").addEventListener("click", pop2);
@@ -20,11 +24,18 @@ document
 
 document.querySelector("#AirBomb_sprite").addEventListener("click", Boom);
 
+
+
+
+/*==================== CLICK ANIMATIONS =========================*/
+
 function pop1() {
   const container = document.querySelector("#Baloon1_container");
   const sprite = document.querySelector("#Baloon1_sprite");
   container.classList.add("paused");
   sprite.classList.add("Pop");
+
+  scoreStatus();
 }
 
 function pop2() {
@@ -32,6 +43,8 @@ function pop2() {
   const sprite = document.querySelector("#Baloon2_sprite");
   container.classList.add("paused");
   sprite.classList.add("Pop");
+
+  scoreStatus();
 }
 
 function pop3() {
@@ -39,6 +52,8 @@ function pop3() {
   const sprite = document.querySelector("#Baloon3_sprite");
   container.classList.add("paused");
   sprite.classList.add("Pop");
+
+  scoreStatus();
 }
 
 function airOutDR() {
@@ -105,12 +120,33 @@ function Boom() {
   gameStatus();
 }
 
+
+
+/*==================== GAME STATUS =========================*/
+
+function timerEnd() {
+  if (score >= 20) {
+    //Game win shows up
+  } else {
+    //Game over shows up
+  }
+}
+
+function scoreStatus() {
+  score++
+  document.querySelector("#score_counter").innerHTML = score
+}
+
 function gameStatus() {
   if (hearts == 2) {
     heartImage.src = "./UI/HealthTwo.png";
+    heartImage.classList.add("pulse_2hearts");
   } else if (hearts == 1) {
     heartImage.src = "./UI/HealthOne.png";
+    heartImage.classList.add("pulse_1hearts");
   } else if (hearts <= 0) {
     heartImage.src = "./UI/HealthZero.png";
+    heartImage.classList.add("pulse_0hearts");
+    //Game over shows up.
   }
 }
