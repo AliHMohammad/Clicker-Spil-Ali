@@ -32,7 +32,9 @@
     font-family: 'Roboto Slab', serif;
     font-size: 4vw;
     z-index: 100;
-    position: fixed;
-    bottom: 10%;
-    right: 3.7%;
+    position: absolute;
+    bottom: 25%;
+    right: 3%;
+    
 }
+
