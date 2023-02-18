@@ -29,11 +29,11 @@
 }
 
 #score_counter {
-    font-family: 'Roboto Slab', serif;
-    font-size: 4vw;
+    font-family: 'VT323', monospace;
+    font-size: 6vw;
     z-index: 100;
     position: absolute;
-    bottom: 25%;
+    bottom: 24.5%;
     right: 3%;
     
 }
