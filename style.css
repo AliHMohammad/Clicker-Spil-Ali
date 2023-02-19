@@ -1,4 +1,4 @@
-@import url("animations.css");@import url("game_clouds.css");@import url("game_baloons.css");@import url("game_airbaloons.css");@import url("game.bombs.css");@import url(game_UI.css);@import url(start.css);
+@import url("animations.css");@import url("game_clouds.css");@import url("game_baloons.css");@import url("game_airbaloons.css");@import url("game.bombs.css");@import url(game_UI.css);@import url(start.css);@import url(win.css);
 
 body {
     margin: 0;
@@ -53,7 +53,7 @@ img {
 }
 
 #game_ui > img {
-    z-index: 99;
+    z-index: 4;
     width: 100%;
     position: absolute;
 }

@@ -1,6 +1,6 @@
 
 #start {
-    z-index: 101;
+    z-index: 5;
     grid-area: 1 / 1;
     background-image: url(./Images/Background.jpg);
     background-repeat:repeat-y;
@@ -44,12 +44,3 @@
 }
 */
 
-
-
-
-
-
-
-#start p {
-    font-size: 50px;
-}

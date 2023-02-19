@@ -22,7 +22,7 @@
 }
 
 #blackBar {
-    z-index: 99;
+    z-index: 4;
     top: 26.8%;
     left: 44.1%;
     scale: 6.2% 24.8%;
@@ -31,7 +31,7 @@
 #score_counter {
     font-family: 'VT323', monospace;
     font-size: 6vw;
-    z-index: 100;
+    z-index: 4;
     position: absolute;
     bottom: 24.5%;
     right: 3%;

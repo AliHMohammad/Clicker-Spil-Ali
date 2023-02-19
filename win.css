@@ -1,0 +1,36 @@
+
+#Level_Complete {
+    z-index: 5;
+    grid-area: 1 / 1;
+    background-image: url(./Images/win_background.avif);
+    background-repeat:repeat-y;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+#You_Win {
+    top: 5%;
+    width: 50%;
+    position: relative;
+    left: 27%;
+}
+
+#Menu_Button {
+    top: 72%;
+    width: 30%;
+    position: relative;
+    left: -35%;
+}
+
+#Next_Button {
+    top: 52.5%;
+    width: 30%;
+    position: relative;
+    left: 55%;
+}
+
+
+#Next_Button:hover, #Menu_Button:hover{
+    scale: 1.1;
+}

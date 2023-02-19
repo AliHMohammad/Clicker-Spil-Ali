@@ -251,7 +251,7 @@
 }
 
 .Timer {
-    animation: Timer 60s linear 1 reverse forwards;
+    animation: Timer 10s linear 1 reverse forwards;
     transform-origin: top center;
 }
 

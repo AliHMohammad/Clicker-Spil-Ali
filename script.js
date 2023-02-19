@@ -4,6 +4,9 @@
 let hearts = 3;
 let score = 0;
 
+const levelComplete = document.querySelector("#Level_Complete"); 
+
+
 const baloon1Sprite = document.querySelector("#Baloon1_sprite");
 const baloon2Sprite = document.querySelector("#Baloon2_sprite");
 const baloon3Sprite = document.querySelector("#Baloon3_sprite");
@@ -66,7 +69,7 @@ function startGame() {
 }
 
 
-/*==================== EVENTS =========================*/
+/*==================== CLICK EVENTS =========================*/
 
 
 baloon1Sprite.addEventListener("click", pop1);
@@ -81,10 +84,31 @@ airBaloon4Sprite.addEventListener("click", fartRight);
 
 airBombSprite.addEventListener("click", Boom);
 
-timer.addEventListener("animationed", timerEnd);
-
-
 restart.addEventListener("click", startGame);
+
+
+
+
+/*==================== ANIMATIONED EVENTS =========================*/
+
+baloon3Sprite.addEventListener("animationend", respawn);
+
+function respawn() {
+  console.log("RESPAWN");
+  
+  baloon3Container.className = "";
+  baloon3Sprite.className = "";
+  baloon3Container.style.top = 100;
+  baloon3Container.classList.add("FlyUp");
+}
+
+
+
+timer.addEventListener("animationend", timerEnd);
+
+
+
+
 
 
 /*==================== CLICK FUNCTIONS =========================*/
@@ -175,8 +199,8 @@ function Boom() {
 /*==================== GAME STATUS =========================*/
 
 function timerEnd() {
-  if (score >= 20) {
-    //Game win shows up
+  if (score > 0) {
+    winScreen();
   } else {
     //Game over shows up
   }
@@ -217,7 +241,17 @@ document.querySelector("#start_button").addEventListener("click", function () {
   startGame();
 })
 
+/*---------------------------------------------*/
 
+
+function winScreen() {
+  levelComplete.classList.remove("hidden");
+}
+
+document.querySelector("#Menu_Button").addEventListener("click", function () {
+  document.querySelector("#start").classList.remove("hidden");
+  levelComplete.classList.add("hidden");
+});
 
 
 
