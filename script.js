@@ -39,7 +39,7 @@ const restart = document.querySelector("#restart");
 
 
 
-/*==================== GAME INITIATE =========================*/
+/*==================== GAME INITIATE & RESET =========================*/
 
 function startGame() {
   baloon1Container.classList.add("FlyUp");
@@ -69,6 +69,18 @@ function startGame() {
 }
 
 
+function resetGame() {
+  resetGameElements();
+  timerReset();
+
+  hearts = 3;
+  gameStatus();
+
+  score = 0;
+  document.querySelector("#score_counter").innerHTML = score;
+}
+
+
 /*==================== CLICK EVENTS =========================*/
 
 baloon1Sprite.addEventListener("click", () => { pop(baloon1Container, baloon1Sprite) });
@@ -85,12 +97,6 @@ airBombSprite.addEventListener("click", boom);
 
 
 restart.addEventListener("click", resetGame);
-
-function resetGame() {
-  console.log("SALAM");
-
-
-}
 
 
 /*==================== ANIMATIONED EVENTS =========================*/
@@ -109,12 +115,10 @@ airBaloon4Sprite.addEventListener("animationend", () => { respawn(airBaloon4Cont
 
 
 
-/*==================== RESPAWNER =========================*/
+/*==================== RESPAWNER & RESETTER =========================*/
 
 
 function respawn(container, sprite) {
-  console.log("bruh");
-
   container.className = "";
   sprite.className = "";
 
@@ -123,8 +127,27 @@ function respawn(container, sprite) {
   container.classList.add("FlyUp");
 }
 
+function resetGameElements() {
+  respawn(baloon1Container, baloon1Sprite);
+  respawn(baloon2Container, baloon2Sprite);
+  respawn(baloon3Container, baloon3Sprite);
+  respawn(baloon4Container, baloon4Sprite);
 
+  respawn(airBaloon1Container, airBaloon1Sprite);
+  respawn(airBaloon2Container, airBaloon2Sprite);
+  respawn(airBaloon3Container, airBaloon3Sprite);
+  respawn(airBaloon4Container, airBaloon4Sprite);
 
+  respawn(airBombContainer, airBombSprite);
+}
+
+function timerReset() {
+  timer.className = "";
+
+  void timer.offsetWidth;
+
+  timer.classList.add("Timer");
+}
 
 
 /*==================== CLICK FUNCTIONS =========================*/
@@ -209,6 +232,7 @@ function gameStatus() {
 
   if (hearts == 3) {
     heartImage.src = "./UI/HealthThree.png";
+    heartImage.className = "";
     heartImage.classList.add("pulse");
   } else if (hearts == 2) {
     heartImage.src = "./UI/HealthTwo.png";
@@ -246,8 +270,8 @@ document.querySelector("#Menu_Button").addEventListener("click", function () {
 });
 
 document.querySelector("#Next_Button").addEventListener("click", function () {
+  resetGame();
   levelComplete.classList.add("hidden");
-  
 })
 
 
