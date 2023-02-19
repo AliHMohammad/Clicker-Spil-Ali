@@ -71,41 +71,57 @@ function startGame() {
 
 /*==================== CLICK EVENTS =========================*/
 
-
-baloon1Sprite.addEventListener("click", pop1);
-baloon2Sprite.addEventListener("click", pop2);
-baloon3Sprite.addEventListener("click", pop3);
-baloon4Sprite.addEventListener("click", pop4);
-
+baloon1Sprite.addEventListener("click", () => { pop(baloon1Container, baloon1Sprite) });
+baloon2Sprite.addEventListener("click", () => { pop(baloon2Container, baloon2Sprite) });
+baloon3Sprite.addEventListener("click", () => { pop(baloon3Container, baloon3Sprite) });
+baloon4Sprite.addEventListener("click", () => { pop(baloon4Container, baloon4Sprite) });
+  
 airBaloon1Sprite.addEventListener("click", airOutDR);
 airBaloon2Sprite.addEventListener("click", airOutDL);
 airBaloon3Sprite.addEventListener("click", fartLeft);
 airBaloon4Sprite.addEventListener("click", fartRight);
 
-airBombSprite.addEventListener("click", Boom);
-
-restart.addEventListener("click", startGame);
+airBombSprite.addEventListener("click", boom);
 
 
+restart.addEventListener("click", resetGame);
+
+function resetGame() {
+  console.log("SALAM");
+
+
+}
 
 
 /*==================== ANIMATIONED EVENTS =========================*/
 
-baloon3Sprite.addEventListener("animationend", respawn);
-
-function respawn() {
-  console.log("RESPAWN");
-  
-  baloon3Container.className = "";
-  baloon3Sprite.className = "";
-  baloon3Container.style.top = 100;
-  baloon3Container.classList.add("FlyUp");
-}
-
-
-
 timer.addEventListener("animationend", timerEnd);
 
+baloon1Sprite.addEventListener("animationend", () => { respawn(baloon1Container, baloon1Sprite) })
+baloon2Sprite.addEventListener("animationend", () => { respawn(baloon2Container, baloon2Sprite) })
+baloon3Sprite.addEventListener("animationend", () => { respawn(baloon3Container, baloon3Sprite) })
+baloon4Sprite.addEventListener("animationend", () => { respawn(baloon4Container, baloon4Sprite) })
+
+airBaloon1Sprite.addEventListener("animationend", () => { respawn(airBaloon1Container, airBaloon1Sprite)})
+airBaloon2Sprite.addEventListener("animationend", () => { respawn(airBaloon2Container, airBaloon2Sprite) })
+airBaloon3Sprite.addEventListener("animationend", () => { respawn(airBaloon3Container, airBaloon3Sprite)})
+airBaloon4Sprite.addEventListener("animationend", () => { respawn(airBaloon4Container, airBaloon4Sprite)})
+
+
+
+/*==================== RESPAWNER =========================*/
+
+
+function respawn(container, sprite) {
+  console.log("bruh");
+
+  container.className = "";
+  sprite.className = "";
+
+  void container.offsetWidth;
+
+  container.classList.add("FlyUp");
+}
 
 
 
@@ -113,32 +129,10 @@ timer.addEventListener("animationend", timerEnd);
 
 /*==================== CLICK FUNCTIONS =========================*/
 
-function pop1() {
-  baloon1Container.classList.add("paused");
-  baloon1Sprite.classList.add("Pop");
-  
-  scoreStatus();
-}
 
-function pop2() {
-  baloon2Container.classList.add("paused");
-  baloon2Sprite.classList.add("Pop");
-  
-
-  scoreStatus();
-}
-
-function pop3() {
-  baloon3Container.classList.add("paused");
-  baloon3Sprite.classList.add("Pop");
-
-  scoreStatus();
-}
-
-function pop4() {
-  baloon4Container.classList.add("paused");
-  baloon4Sprite.classList.add("Pop");
-
+function pop(container, sprite) {
+  container.classList.add("paused");
+  sprite.classList.add("Pop");
   scoreStatus();
 }
 
@@ -178,7 +172,7 @@ function fartRight() {
   gameStatus();
 }
 
-function Boom() {
+function boom() {
   airBombContainer.classList.add("paused");
   airBombSprite.classList.add("Explosion");
 
@@ -195,11 +189,10 @@ function Boom() {
 }
 
 
-
 /*==================== GAME STATUS =========================*/
 
 function timerEnd() {
-  if (score > 0) {
+  if (score > 1  && hearts > 0) {
     winScreen();
   } else {
     //Game over shows up
@@ -231,18 +224,17 @@ function gameStatus() {
   }
 }
 
-
-
 /*==================== START SCREEN =========================*/
 
 document.querySelector("#start_button").addEventListener("click", function () {
+  console.log("BING!");
   document.querySelector("#start").classList.add("hidden");
 
   startGame();
 })
 
-/*---------------------------------------------*/
 
+/*==================== WIN SCREEN =========================*/
 
 function winScreen() {
   levelComplete.classList.remove("hidden");
@@ -252,6 +244,11 @@ document.querySelector("#Menu_Button").addEventListener("click", function () {
   document.querySelector("#start").classList.remove("hidden");
   levelComplete.classList.add("hidden");
 });
+
+document.querySelector("#Next_Button").addEventListener("click", function () {
+  levelComplete.classList.add("hidden");
+  
+})
 
 
 
