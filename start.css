@@ -12,14 +12,14 @@
 #Game_Title {
     font-family: 'VT323', monospace;
     font-size: 15vh;
-    position: fixed;
+    position: relative;
     top: 10%;
     left: 30%;
 }
 
 
 #start_button{
-    top: 50%;
+    top: 20%;
     width: 30%;
     position: relative;
     left: 36%;
@@ -27,7 +27,7 @@
 }
 
 #help_button{
-    top: 65%;
+    top: 35%;
     left: 11%;
     width: 20%;
     position: relative;

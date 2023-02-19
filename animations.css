@@ -5,7 +5,6 @@
   100% {
     transform: translateY(-60vw);
   }
-  /* animation: FlyUp 12s ease-in infinite forwards*/
 }
 
 .FlyUp {
@@ -47,8 +46,6 @@
     transform: scale(10.0);
     opacity: 0.0;
   }
-
-  /*animation: Explosion 2s ease-out 0.3s infinite forwards;*/
 }
 
 .Explosion {
@@ -111,8 +108,6 @@
         transform: translate(-190px, 440px) rotate(-180deg) scale(0.5);
         opacity: 0;
     }
-    
-    /*animation: AirOut_DownLeft 2s ease-in infinite forwards;*/
 }
 
 .AirOut_DownLeft {
@@ -158,8 +153,6 @@
         transform: translate(190px, 440px) rotate(180deg) scale(0.5);
         opacity: 0;
     }
-    
-    /*animation: AirOut_DownRight 2s ease-in infinite forwards;*/
 }
 
 .AirOut_DownRight {
@@ -183,9 +176,6 @@
         transform: translate(300px, -112px) rotate(85deg) scale(0.3);
         opacity: 0;
     }
-
-    /*animation: FartRight 1s linear infinite forwards;*/
-
 }
 
 .FartRight {
@@ -209,16 +199,11 @@
         transform: translate(-300px, -112px) rotate(-85deg) scale(0.3);
         opacity: 0;
     }
-
-    /*animation: FartLeft 1s linear infinite forwards;*/
 }
 
 .FartLeft {
     animation: FartLeft 1s linear 1 forwards;
 }
-
-
-
 
 
 /* --------------------------UI--------------------------------*/
@@ -234,8 +219,6 @@
     } 75% {
         transform: rotate(-5deg);
     }
-
-    /*animation: Shake 0.1s linear 0s 15;*/
 }
 
 .Shake {
@@ -281,7 +264,6 @@
 .pulse_0hearts {
     animation: pulse 0s linear infinite;
 }
-
 
 .pulse_menu {
     animation: pulse 10s linear infinite;

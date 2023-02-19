@@ -73,6 +73,7 @@ function startGame() {
 function resetGame() {
   resetGameElements();
   timerReset();
+  otherReset();
 
   hearts = 3;
   gameStatus();
@@ -151,6 +152,16 @@ function timerReset() {
   timer.classList.add("Timer");
 }
 
+function otherReset() {
+ /*tilføj evt hjerter*/
+  document.querySelector("#life_board").className = "";
+  document.querySelector("#time_board").className = "";
+  document.querySelector("#score_board").className = "";
+  document.querySelector("#score_counter").className = "";
+  document.querySelector("#game_background").className = "";
+  document.querySelector("#restart").className = "";
+}
+
 
 /*==================== CLICK FUNCTIONS =========================*/
 
@@ -201,12 +212,15 @@ function boom() {
   airBombContainer.classList.add("paused");
   airBombSprite.classList.add("Explosion");
 
+  /*tilføj evt hjerter shake*/
   document.querySelector("#life_board").classList.add("Shake");
   document.querySelector("#time_board").classList.add("Shake");
   document.querySelector("#score_board").classList.add("Shake");
   timer.classList.add("Shake");
   document.querySelector("#score_counter").classList.add("Shake");
   document.querySelector("#game_background").classList.add("Shake");
+  document.querySelector("#restart").classList.add("Shake");
+  document.querySelector("#life_board").classList.add("Shake");
 
   hearts = -3;
 
