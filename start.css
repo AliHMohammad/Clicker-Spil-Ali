@@ -9,6 +9,14 @@
     background-size: cover;
 }
 
+#Game_Title {
+    font-family: 'VT323', monospace;
+    font-size: 15vh;
+    position: fixed;
+    top: 10%;
+    left: 30%;
+}
+
 
 #start_button{
     top: 50%;
@@ -28,6 +36,7 @@
 #start_button:hover, #help_button:hover{
     scale: 1.1;
 }
+
 
 
 /*
