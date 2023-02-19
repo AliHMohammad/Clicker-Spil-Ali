@@ -253,7 +253,7 @@ function gameStatus() {
 document.querySelector("#start_button").addEventListener("click", function () {
   console.log("BING!");
   document.querySelector("#start").classList.add("hidden");
-
+  resetGame();
   startGame();
 })
 
