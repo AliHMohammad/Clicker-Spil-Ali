@@ -1,0 +1,38 @@
+
+
+
+#game_over {
+    z-index: 5;
+    grid-area: 1 / 1;
+    background-image: url(./Images/lose_background.jpg);
+    background-repeat:repeat-y;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+#You_Lose {
+    top: 5%;
+    width: 35%;
+    position: relative;
+    left: 34%;
+}
+
+
+#Menu_Button2 {
+    top: 52%;
+    width: 30%;
+    position: relative;
+    left: -20%;
+}
+
+#Retry_Button {
+    top: 53%;
+    width: 30%;
+    position: relative;
+    left: -10%;
+}
+
+#Menu_Button2:hover, #Retry_Button:hover {
+    scale: 1.1;
+}

@@ -5,6 +5,7 @@ let hearts = 3;
 let score = 0;
 
 const levelComplete = document.querySelector("#Level_Complete"); 
+const gameOver = document.querySelector("#game_over");
 
 
 const baloon1Sprite = document.querySelector("#Baloon1_sprite");
@@ -102,6 +103,7 @@ restart.addEventListener("click", resetGame);
 /*==================== ANIMATIONED EVENTS =========================*/
 
 timer.addEventListener("animationend", timerEnd);
+airBombSprite.addEventListener("animationend", loseScreen);
 
 baloon1Sprite.addEventListener("animationend", () => { respawn(baloon1Container, baloon1Sprite) })
 baloon2Sprite.addEventListener("animationend", () => { respawn(baloon2Container, baloon2Sprite) })
@@ -215,10 +217,10 @@ function boom() {
 /*==================== GAME STATUS =========================*/
 
 function timerEnd() {
-  if (score > 1  && hearts > 0) {
+  if (score > 10  && hearts > 0) {
     winScreen();
   } else {
-    //Game over shows up
+    loseScreen();
   }
 }
 
@@ -244,7 +246,6 @@ function gameStatus() {
     heartImage.src = "./UI/HealthZero.png";
     heartImage.classList.add("pulse_0hearts");
     timer.classList.add("paused");
-    //Game over shows up.
   }
 }
 
@@ -275,7 +276,19 @@ document.querySelector("#Next_Button").addEventListener("click", function () {
 })
 
 
+/*==================== LOSE SCREEN =========================*/
 
+function loseScreen() {
+  gameOver.classList.remove("hidden");
+}
 
+document.querySelector("#Menu_Button2").addEventListener("click", function () {
+  document.querySelector("#start").classList.remove("hidden");
+  gameOver.classList.add("hidden");
+});
 
+document.querySelector("#Retry_Button").addEventListener("click", function () {
+  resetGame();
+  gameOver.classList.add("hidden");
+});
 
