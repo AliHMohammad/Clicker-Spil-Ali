@@ -52,9 +52,9 @@ function startGame() {
   airBaloon3Container.classList.add("FlyUp");
   airBaloon4Container.classList.add("FlyUp");
   airBombContainer.classList.add("FlyUp");
-
-  timer.classList.add("Timer")
-  heartImage.classList.add("pulse")
+  timer.classList.remove("hidden");
+  timer.classList.add("Timer");
+  heartImage.classList.add("pulse");
 
 
   /*Clouds*/
@@ -78,7 +78,7 @@ function resetGame() {
   gameStatus();
 
   score = 0;
-  document.querySelector("#score_counter").innerHTML = score;
+  document.querySelector("#score_counter").innerHTML = `${score}/20`;
 }
 
 
@@ -217,7 +217,7 @@ function boom() {
 /*==================== GAME STATUS =========================*/
 
 function timerEnd() {
-  if (score > 10  && hearts > 0) {
+  if (score >= 20  && hearts > 0) {
     winScreen();
   } else {
     loseScreen();
@@ -226,7 +226,7 @@ function timerEnd() {
 
 function scoreStatus() {
   score++
-  document.querySelector("#score_counter").innerHTML = score
+  document.querySelector("#score_counter").innerHTML = `${score}/20`
 }
 
 function gameStatus() {

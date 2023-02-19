@@ -16,9 +16,9 @@
 }
 
 #score_board {
-    top: -19%;
-    left: 42%;
-    scale: 0.07;
+    top: -22%;
+    left: 44%;
+    scale: 0.05;
 }
 
 #blackBar {
@@ -30,11 +30,11 @@
 
 #score_counter {
     font-family: 'VT323', monospace;
-    font-size: 6vw;
+    font-size: 5vw;
     z-index: 4;
     position: absolute;
-    bottom: 24.5%;
-    right: 3%;
+    bottom: 20.5%;
+    right: 1%;
     
 }
 
