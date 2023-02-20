@@ -83,22 +83,22 @@ function resetGame() {
 }
 
 
-/*==================== CLICK EVENTS =========================*/
+/*==================== CLICK/MOUSEDOWN EVENTS =========================*/
 
-baloon1Sprite.addEventListener("click", () => { pop(baloon1Container, baloon1Sprite) });
-baloon2Sprite.addEventListener("click", () => { pop(baloon2Container, baloon2Sprite) });
-baloon3Sprite.addEventListener("click", () => { pop(baloon3Container, baloon3Sprite) });
-baloon4Sprite.addEventListener("click", () => { pop(baloon4Container, baloon4Sprite) });
+baloon1Sprite.addEventListener("mousedown", () => { pop(baloon1Container, baloon1Sprite) });
+baloon2Sprite.addEventListener("mousedown", () => { pop(baloon2Container, baloon2Sprite) });
+baloon3Sprite.addEventListener("mousedown", () => { pop(baloon3Container, baloon3Sprite) });
+baloon4Sprite.addEventListener("mousedown", () => { pop(baloon4Container, baloon4Sprite) });
   
-airBaloon1Sprite.addEventListener("click", airOutDR);
-airBaloon2Sprite.addEventListener("click", airOutDL);
-airBaloon3Sprite.addEventListener("click", fartLeft);
-airBaloon4Sprite.addEventListener("click", fartRight);
+airBaloon1Sprite.addEventListener("mousedown", airOutDR);
+airBaloon2Sprite.addEventListener("mousedown", airOutDL);
+airBaloon3Sprite.addEventListener("mousedown", fartLeft);
+airBaloon4Sprite.addEventListener("mousedown", fartRight);
 
-airBombSprite.addEventListener("click", boom);
+airBombSprite.addEventListener("mousedown", boom);
 
 
-restart.addEventListener("click", resetGame);
+restart.addEventListener("mousedown", resetGame);
 
 
 /*==================== ANIMATIONED EVENTS =========================*/
