@@ -260,6 +260,7 @@ function gameStatus() {
     heartImage.src = "./UI/HealthZero.png";
     heartImage.classList.add("pulse_0hearts");
     timer.classList.add("paused");
+    loseScreen();
   }
 }
 
