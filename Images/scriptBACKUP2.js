@@ -88,29 +88,27 @@ function resetGame() {
 
 /*==================== CLICK/MOUSEDOWN EVENTS =========================*/
 
-// function addEventListenerToElements() {
-//   console.log("Im locked and loaded!");
+function addEventListenerToElements() {
+  console.log("Im locked and loaded!");
 
-//   baloon1Container.addEventListener("mousedown", pop1);
-//   baloon2Container.addEventListener("mousedown", pop2);
-//   baloon3Container.addEventListener("mousedown", pop3);
-//   baloon4Container.addEventListener("mousedown", pop4);
+  baloon1Container.addEventListener("mousedown", pop1);
+  baloon2Container.addEventListener("mousedown", pop2);
+  baloon3Container.addEventListener("mousedown", pop3);
+  baloon4Container.addEventListener("mousedown", pop4);
 
     
-//   airBaloon1Container.addEventListener("mousedown", airOutDR);
-//   airBaloon2Container.addEventListener("mousedown", airOutDL);
-//   airBaloon3Container.addEventListener("mousedown", fartLeft);
-//   airBaloon4Container.addEventListener("mousedown", fartRight);
+  airBaloon1Container.addEventListener("mousedown", airOutDR);
+  airBaloon2Container.addEventListener("mousedown", airOutDL);
+  airBaloon3Container.addEventListener("mousedown", fartLeft);
+  airBaloon4Container.addEventListener("mousedown", fartRight);
   
-//   airBombContainer.addEventListener("mousedown", boom);
+  airBombContainer.addEventListener("mousedown", boom);
   
   
-//   restart.addEventListener("mousedown", resetGame);
+  restart.addEventListener("mousedown", resetGame);
   
-// }
+}
 
-
-restart.addEventListener("mousedown", resetGame);
 
 
 
@@ -322,7 +320,7 @@ document.querySelector("#start_button").addEventListener("click", function () {
   console.log("START!");
   document.querySelector("#start").classList.add("hidden");
   resetGame();
-  // startGame();
+  startGame();
   addEventListenerToElements();
 })
 
