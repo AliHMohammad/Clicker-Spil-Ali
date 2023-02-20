@@ -1,3 +1,4 @@
+window.addEventListener("load", addEventListenerToElements);
 
 /*==================== ELEMENT VARIABLES =========================*/
 
@@ -85,20 +86,25 @@ function resetGame() {
 
 /*==================== CLICK/MOUSEDOWN EVENTS =========================*/
 
-baloon1Sprite.addEventListener("mousedown", () => { pop(baloon1Container, baloon1Sprite) });
-baloon2Sprite.addEventListener("mousedown", () => { pop(baloon2Container, baloon2Sprite) });
-baloon3Sprite.addEventListener("mousedown", () => { pop(baloon3Container, baloon3Sprite) });
-baloon4Sprite.addEventListener("mousedown", () => { pop(baloon4Container, baloon4Sprite) });
+function addEventListenerToElements() {
+  console.log("Im locked and loaded!");
+  baloon1Sprite.addEventListener("mousedown", () => { pop(baloon1Container, baloon1Sprite) });
+  baloon2Sprite.addEventListener("mousedown", () => { pop(baloon2Container, baloon2Sprite) });
+  baloon3Sprite.addEventListener("mousedown", () => { pop(baloon3Container, baloon3Sprite) });
+  baloon4Sprite.addEventListener("mousedown", () => { pop(baloon4Container, baloon4Sprite) });
+    
+  airBaloon1Sprite.addEventListener("mousedown", airOutDR);
+  airBaloon2Sprite.addEventListener("mousedown", airOutDL);
+  airBaloon3Sprite.addEventListener("mousedown", fartLeft);
+  airBaloon4Sprite.addEventListener("mousedown", fartRight);
   
-airBaloon1Sprite.addEventListener("mousedown", airOutDR);
-airBaloon2Sprite.addEventListener("mousedown", airOutDL);
-airBaloon3Sprite.addEventListener("mousedown", fartLeft);
-airBaloon4Sprite.addEventListener("mousedown", fartRight);
+  airBombSprite.addEventListener("mousedown", boom);
+  
+  
+  restart.addEventListener("mousedown", resetGame);
+  
+}
 
-airBombSprite.addEventListener("mousedown", boom);
-
-
-restart.addEventListener("mousedown", resetGame);
 
 
 /*==================== ANIMATIONED EVENTS =========================*/
