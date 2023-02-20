@@ -321,7 +321,7 @@ function gameStatus() {
 /*==================== START SCREEN =========================*/
 
 document.querySelector("#start_button").addEventListener("click", function () {
-  console.log("BING!");
+  console.log("START!");
   document.querySelector("#start").classList.add("hidden");
   resetGame();
   startGame();
@@ -332,15 +332,18 @@ document.querySelector("#start_button").addEventListener("click", function () {
 /*==================== WIN SCREEN =========================*/
 
 function winScreen() {
+  console.log("YOU WIN!");
   levelComplete.classList.remove("hidden");
 }
 
 document.querySelector("#Menu_Button").addEventListener("click", function () {
+  console.log("Back to menu");
   document.querySelector("#start").classList.remove("hidden");
   levelComplete.classList.add("hidden");
 });
 
 document.querySelector("#Next_Button").addEventListener("click", function () {
+  console.log("Play again");
   resetGame();
   levelComplete.classList.add("hidden");
 })
@@ -349,15 +352,18 @@ document.querySelector("#Next_Button").addEventListener("click", function () {
 /*==================== LOSE SCREEN =========================*/
 
 function loseScreen() {
+  console.log("YOU LOSE!");
   gameOver.classList.remove("hidden");
 }
 
 document.querySelector("#Menu_Button2").addEventListener("click", function () {
+  console.log("Back to menu");
   document.querySelector("#start").classList.remove("hidden");
   gameOver.classList.add("hidden");
 });
 
 document.querySelector("#Retry_Button").addEventListener("click", function () {
+  console.log("Play again");
   resetGame();
   gameOver.classList.add("hidden");
 });
