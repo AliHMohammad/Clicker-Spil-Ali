@@ -1,9 +1,8 @@
-
+window.addEventListener("load", addEventListenerToElements);
 
 /*==================== ELEMENT VARIABLES =========================*/
 
 let hearts = 3;
-let airbaloonsShot = 0;
 let score = 0;
 
 const levelComplete = document.querySelector("#Level_Complete"); 
@@ -77,7 +76,6 @@ function resetGame() {
   timerReset();
   otherReset();
 
-  airbaloonsShot = 0;
   hearts = 3;
   gameStatus();
 
@@ -90,20 +88,17 @@ function resetGame() {
 
 function addEventListenerToElements() {
   console.log("Im locked and loaded!");
-  //baloon1Container.addEventListener("mousedown", () => { pop(baloon1Container, baloon1Sprite) });
-
-  baloon1Container.addEventListener("mousedown", pop1);
-  baloon2Container.addEventListener("mousedown", pop2);
-  baloon3Container.addEventListener("mousedown", pop3);
-  baloon4Container.addEventListener("mousedown", pop4);
-
+  baloon1Sprite.addEventListener("mousedown", () => { pop(baloon1Container, baloon1Sprite) });
+  baloon2Sprite.addEventListener("mousedown", () => { pop(baloon2Container, baloon2Sprite) });
+  baloon3Sprite.addEventListener("mousedown", () => { pop(baloon3Container, baloon3Sprite) });
+  baloon4Sprite.addEventListener("mousedown", () => { pop(baloon4Container, baloon4Sprite) });
     
-  airBaloon1Container.addEventListener("mousedown", airOutDR);
-  airBaloon2Container.addEventListener("mousedown", airOutDL);
-  airBaloon3Container.addEventListener("mousedown", fartLeft);
-  airBaloon4Container.addEventListener("mousedown", fartRight);
+  airBaloon1Sprite.addEventListener("mousedown", airOutDR);
+  airBaloon2Sprite.addEventListener("mousedown", airOutDL);
+  airBaloon3Sprite.addEventListener("mousedown", fartLeft);
+  airBaloon4Sprite.addEventListener("mousedown", fartRight);
   
-  airBombContainer.addEventListener("mousedown", boom);
+  airBombSprite.addEventListener("mousedown", boom);
   
   
   restart.addEventListener("mousedown", resetGame);
@@ -112,32 +107,27 @@ function addEventListenerToElements() {
 
 
 
-
-
-
 /*==================== ANIMATIONED EVENTS =========================*/
 
 timer.addEventListener("animationend", timerEnd);
 airBombSprite.addEventListener("animationend", loseScreen);
 
-baloon1Sprite.addEventListener("animationend", () => { respawn(baloon1Container, pop1, baloon1Container, baloon1Sprite)});
-baloon2Sprite.addEventListener("animationend", () => { respawn(baloon2Container, pop2, baloon2Container, baloon2Sprite)});
-baloon3Sprite.addEventListener("animationend", () => { respawn(baloon3Container, pop3, baloon3Container, baloon3Sprite)});
-baloon4Sprite.addEventListener("animationend", () => { respawn(baloon4Container, pop4, baloon4Container, baloon4Sprite)});
+baloon1Sprite.addEventListener("animationend", () => { respawn(baloon1Container, baloon1Sprite) })
+baloon2Sprite.addEventListener("animationend", () => { respawn(baloon2Container, baloon2Sprite) })
+baloon3Sprite.addEventListener("animationend", () => { respawn(baloon3Container, baloon3Sprite) })
+baloon4Sprite.addEventListener("animationend", () => { respawn(baloon4Container, baloon4Sprite) })
 
-
-airBaloon1Sprite.addEventListener("animationend", () => { respawn(airBaloon1Container, airOutDR, airBaloon1Container, airBaloon1Sprite)});
-airBaloon2Sprite.addEventListener("animationend", () => { respawn(airBaloon2Container, airOutDL, airBaloon2Container, airBaloon2Sprite)});
-airBaloon3Sprite.addEventListener("animationend", () => { respawn(airBaloon3Container, fartLeft, airBaloon3Container, airBaloon3Sprite)});
-airBaloon4Sprite.addEventListener("animationend", () => { respawn(airBaloon4Container, fartRight, airBaloon4Container, airBaloon4Sprite)});
+airBaloon1Sprite.addEventListener("animationend", () => { respawn(airBaloon1Container, airBaloon1Sprite)})
+airBaloon2Sprite.addEventListener("animationend", () => { respawn(airBaloon2Container, airBaloon2Sprite) })
+airBaloon3Sprite.addEventListener("animationend", () => { respawn(airBaloon3Container, airBaloon3Sprite)})
+airBaloon4Sprite.addEventListener("animationend", () => { respawn(airBaloon4Container, airBaloon4Sprite)})
 
 
 
 /*==================== RESPAWNER & RESETTER =========================*/
 
 
-function respawn(element, animation, container, sprite) {
-  addEventListener(element, animation);
+function respawn(container, sprite) {
   container.className = "";
   sprite.className = "";
 
@@ -146,22 +136,18 @@ function respawn(element, animation, container, sprite) {
   container.classList.add("FlyUp");
 }
 
-function addEventListener(element, animation) {
-  element.addEventListener("mousedown", animation);
-}
-
 function resetGameElements() {
-  respawn(baloon1Container, pop1, baloon1Container, baloon1Sprite);
-  respawn(baloon2Container, pop2, baloon2Container, baloon2Sprite);
-  respawn(baloon3Container, pop3, baloon3Container, baloon3Sprite);
-  respawn(baloon4Container, pop4, baloon4Container, baloon4Sprite);
+  respawn(baloon1Container, baloon1Sprite);
+  respawn(baloon2Container, baloon2Sprite);
+  respawn(baloon3Container, baloon3Sprite);
+  respawn(baloon4Container, baloon4Sprite);
 
-  respawn(airBaloon1Container, airOutDR, airBaloon1Container, airBaloon1Sprite);
-  respawn(airBaloon2Container, airOutDL, airBaloon2Container, airBaloon2Sprite);
-  respawn(airBaloon3Container, fartLeft, airBaloon3Container, airBaloon3Sprite);
-  respawn(airBaloon4Container, fartRight, airBaloon4Container, airBaloon4Sprite);
+  respawn(airBaloon1Container, airBaloon1Sprite);
+  respawn(airBaloon2Container, airBaloon2Sprite);
+  respawn(airBaloon3Container, airBaloon3Sprite);
+  respawn(airBaloon4Container, airBaloon4Sprite);
 
-  respawn(airBombContainer, boom, airBombContainer, airBombSprite);
+  respawn(airBombContainer, airBombSprite);
 }
 
 function timerReset() {
@@ -186,80 +172,49 @@ function otherReset() {
 /*==================== CLICK FUNCTIONS =========================*/
 
 
-function pop1() {
-  baloon1Container.removeEventListener("mousedown", pop1);
-  baloon1Container.classList.add("paused");
-  baloon1Sprite.classList.add("Pop");
-  scoreStatus();
-}
-
-function pop2() {
-  baloon2Container.removeEventListener("mousedown", pop2);
-  baloon2Container.classList.add("paused");
-  baloon2Sprite.classList.add("Pop");
-  scoreStatus();
-}
-
-function pop3() {
-  baloon3Container.removeEventListener("mousedown", pop3);
-  baloon3Container.classList.add("paused");
-  baloon3Sprite.classList.add("Pop");
-  scoreStatus();
-}
-
-function pop4() {
-  baloon4Container.removeEventListener("mousedown", pop4);
-  baloon4Container.classList.add("paused");
-  baloon4Sprite.classList.add("Pop");
+function pop(container, sprite) {
+  container.classList.add("paused");
+  sprite.classList.add("Pop");
   scoreStatus();
 }
 
 function airOutDR() {
-  airBaloon1Container.removeEventListener("mousedown", airOutDR);
   airBaloon1Container.classList.add("paused");
   airBaloon1Sprite.classList.add("AirOut_DownRight");
-
+  
   hearts--;
-  airbaloonsShot++;
 
   gameStatus();
 }
 
 function airOutDL() {
-  airBaloon2Container.removeEventListener("mousedown", airOutDL);
   airBaloon2Container.classList.add("paused");
   airBaloon2Sprite.classList.add("AirOut_DownLeft");
 
   hearts--;
-  airbaloonsShot++
 
   gameStatus();
 }
 
 function fartLeft() {
-  airBaloon3Container.removeEventListener("mousedown", fartLeft);
   airBaloon3Container.classList.add("paused");
   airBaloon3Sprite.classList.add("FartLeft");
 
   hearts--;
-  airbaloonsShot++;
 
   gameStatus();
 }
 
 function fartRight() {
-  airBaloon4Container.removeEventListener("mousedown", fartRight);
   airBaloon4Container.classList.add("paused");
   airBaloon4Sprite.classList.add("FartRight");
 
   hearts--;
-  airbaloonsShot++;
 
   gameStatus();
 }
 
 function boom() {
-  airBombContainer.removeEventListener("mousedown", boom);
   airBombContainer.classList.add("paused");
   airBombSprite.classList.add("Explosion");
 
@@ -282,7 +237,7 @@ function boom() {
 /*==================== GAME STATUS =========================*/
 
 function timerEnd() {
-  if (score >= 20 && hearts > 0) {
+  if (score >= 20  && hearts > 0) {
     winScreen();
   } else {
     loseScreen();
@@ -307,13 +262,10 @@ function gameStatus() {
   } else if (hearts == 1) {
     heartImage.src = "./UI/HealthOne.png";
     heartImage.classList.add("pulse_1hearts");
-  } else if (hearts <= 0 ) {
+  } else if (hearts <= 0) {
     heartImage.src = "./UI/HealthZero.png";
     heartImage.classList.add("pulse_0hearts");
     timer.classList.add("paused");
-  }
-
-  if (airbaloonsShot == 3){
     loseScreen();
   }
 }
@@ -325,7 +277,6 @@ document.querySelector("#start_button").addEventListener("click", function () {
   document.querySelector("#start").classList.add("hidden");
   resetGame();
   startGame();
-  addEventListenerToElements();
 })
 
 
