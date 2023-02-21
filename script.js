@@ -294,7 +294,6 @@ function scoreStatus() {
 
 function gameStatus() {
 
-
   if (hearts == 3) {
     heartImage.src = "./UI/HealthThree.png";
     heartImage.className = "";
@@ -314,6 +313,7 @@ function gameStatus() {
   if (airbaloonsShot == 3){
     loseScreen();
   }
+  
 }
 
 /*==================== START SCREEN =========================*/
