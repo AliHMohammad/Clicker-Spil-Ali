@@ -1,4 +1,4 @@
-
+"use strict";
 
 /*==================== ELEMENT VARIABLES =========================*/
 
@@ -271,7 +271,7 @@ function boom() {
   document.querySelector("#restart").classList.add("Shake");
   document.querySelector("#life_board").classList.add("Shake");
 
-  hearts = -3;
+  hearts -= 3;
 
   gameStatus();
 }
@@ -322,8 +322,8 @@ document.querySelector("#start_button").addEventListener("click", function () {
   console.log("START!");
   document.querySelector("#start").classList.add("hidden");
   resetGame();
-  // startGame();
-  addEventListenerToElements();
+  startGame();
+  //addEventListenerToElements();
 })
 
 
