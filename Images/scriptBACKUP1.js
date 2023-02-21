@@ -77,7 +77,7 @@ function resetGame() {
   otherReset();
 
   hearts = 3;
-  gameStatus();
+  heartStatus();
 
   score = 0;
   document.querySelector("#score_counter").innerHTML = `${score}/20`;
@@ -184,7 +184,7 @@ function airOutDR() {
   
   hearts--;
 
-  gameStatus();
+  heartStatus();
 }
 
 function airOutDL() {
@@ -193,7 +193,7 @@ function airOutDL() {
 
   hearts--;
 
-  gameStatus();
+  heartStatus();
 }
 
 function fartLeft() {
@@ -202,7 +202,7 @@ function fartLeft() {
 
   hearts--;
 
-  gameStatus();
+  heartStatus();
 }
 
 function fartRight() {
@@ -211,7 +211,7 @@ function fartRight() {
 
   hearts--;
 
-  gameStatus();
+  heartStatus();
 }
 
 function boom() {
@@ -230,7 +230,7 @@ function boom() {
 
   hearts = -3;
 
-  gameStatus();
+  heartStatus();
 }
 
 
@@ -249,7 +249,7 @@ function scoreStatus() {
   document.querySelector("#score_counter").innerHTML = `${score}/20`
 }
 
-function gameStatus() {
+function heartStatus() {
 
 
   if (hearts == 3) {
