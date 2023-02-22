@@ -33,7 +33,7 @@
     position: relative;
 }
 
-#start_button:hover, #help_button:hover, #Back_button:hover {
+#start_button:hover, #help_button:hover, #back_button:hover {
     scale: 1.1;
 }
 
@@ -55,7 +55,7 @@
    
 }
 
-#Back_button {
+#back_button {
     top: -107%;
     left: 62%;
     width: 20%;

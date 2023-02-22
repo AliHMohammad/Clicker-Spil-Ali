@@ -367,6 +367,26 @@ document.querySelector("#start_button").addEventListener("click", function () {
   //addEventListenerToElements();
 });
 
+document.querySelector("#help_button").addEventListener("click", showHelpScreen);
+document.querySelector("#back_button").addEventListener("click", hideHelpScreen);
+
+function showHelpScreen() {
+  document.querySelector("#scroll").classList.remove("hidden");
+  document.querySelector("#text1").classList.remove("hidden");
+  document.querySelector("#text2").classList.remove("hidden");
+  document.querySelector("#text3").classList.remove("hidden");
+  document.querySelector("#back_button").classList.remove("hidden");
+  
+}
+
+function hideHelpScreen() {
+  document.querySelector("#scroll").classList.add("hidden");
+  document.querySelector("#text1").classList.add("hidden");
+  document.querySelector("#text2").classList.add("hidden");
+  document.querySelector("#text3").classList.add("hidden");
+  document.querySelector("#back_button").classList.add("hidden");
+}
+
 /*==================== WIN SCREEN =========================*/
 
 function winScreen() {
