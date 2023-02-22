@@ -1,5 +1,10 @@
 "use strict";
 
+
+
+
+
+
 /*==================== ELEMENT VARIABLES =========================*/
 
 let hearts = 3;
@@ -101,6 +106,37 @@ function resetGame() {
 
 restart.addEventListener("mousedown", resetGame);
 
+//======================= GAME ELEMENTS SOUNDEFFECTS ===============================
+
+airBombContainer.addEventListener("mousedown", () => playAudio(explosion));
+baloon1Container.addEventListener("mousedown", () => playAudio(pop));
+baloon2Container.addEventListener("mousedown", () => playAudio(pop));
+baloon3Container.addEventListener("mousedown", () => playAudio(pop));
+baloon4Container.addEventListener("mousedown", () => playAudio(pop));
+airBaloon1Container.addEventListener("mousedown", () => playAudio(deflating));
+airBaloon2Container.addEventListener("mousedown", () => playAudio(deflating));
+airBaloon3Container.addEventListener("mousedown", () => playAudio(deflating));
+airBaloon4Container.addEventListener("mousedown", () => playAudio(deflating));
+
+
+
+
+function startGameSound() {
+  wind.play()
+}
+
+function stopGameSound() {
+  wind.pause();
+  wind.currentTime = 0;
+}
+
+
+
+function playAudio(sound) {
+  console.log(sound);
+  sound.play();
+}
+
 /*==================== ANIMATIONED EVENTS =========================*/
 
 timer.addEventListener("animationend", timerEnd);
@@ -140,7 +176,7 @@ airBaloon4Sprite.addEventListener("animationend", () => {
 /*==================== RESPAWNER & RESETTER =========================*/
 
 function respawn(element, animation, container, sprite) {
-  addEventListener(element, animation);
+  addEventListenerFunction(element, animation);
   container.className = "";
   sprite.className = "";
 
@@ -149,7 +185,7 @@ function respawn(element, animation, container, sprite) {
   container.classList.add("FlyUp");
 }
 
-function addEventListener(element, animation) {
+function addEventListenerFunction(element, animation) {
   element.addEventListener("mousedown", animation);
 }
 
@@ -327,6 +363,7 @@ document.querySelector("#start_button").addEventListener("click", function () {
   document.querySelector("#start").classList.add("hidden");
   resetGame();
   startGame();
+  startGameSound();
   //addEventListenerToElements();
 });
 
@@ -335,17 +372,21 @@ document.querySelector("#start_button").addEventListener("click", function () {
 function winScreen() {
   console.log("YOU WIN!");
   levelComplete.classList.remove("hidden");
+  stopGameSound();
+  playAudio(win_sound);
 }
 
 document.querySelector("#Menu_Button").addEventListener("click", function () {
   console.log("Back to menu");
   document.querySelector("#start").classList.remove("hidden");
   levelComplete.classList.add("hidden");
+  //main menu sound
 });
 
 document.querySelector("#Next_Button").addEventListener("click", function () {
   console.log("Play again");
   resetGame();
+  startGameSound();
   levelComplete.classList.add("hidden");
 });
 
@@ -354,16 +395,20 @@ document.querySelector("#Next_Button").addEventListener("click", function () {
 function loseScreen() {
   console.log("YOU LOSE!");
   gameOver.classList.remove("hidden");
+  stopGameSound();
+  playAudio(lose_sound);
 }
 
 document.querySelector("#Menu_Button2").addEventListener("click", function () {
   console.log("Back to menu");
   document.querySelector("#start").classList.remove("hidden");
   gameOver.classList.add("hidden");
+  //main menu sound
 });
 
 document.querySelector("#Retry_Button").addEventListener("click", function () {
   console.log("Play again");
   resetGame();
+  startGameSound();
   gameOver.classList.add("hidden");
 });

@@ -3,30 +3,31 @@
 
 #Baloon1_container {
     z-index: 1;
-    top: 100%;
+    top: 110%;
     left: 21%;
     width: 4%;
     position: absolute;
-
+    
     
 }
 
 #Baloon2_container {
     z-index: 1;
-    top: 100%;
+    top: 105%;
     left: 40%;
     width: 5%;
     position: absolute;
-
+    
     
 }
 
 #Baloon3_container {
     z-index: 1;
-    top: 100%;
+    top: 102%;
     left: 10%;
     width: 4%;
     position: absolute;
+    
 }
 
 #Baloon4_container {
@@ -35,4 +36,5 @@
     left: 80%;
     width: 4%;
     position: absolute;
+    
 }

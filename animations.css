@@ -3,12 +3,12 @@
 
 @keyframes FlyUp {
   100% {
-    transform: translateY(-60vw);
+    transform: translateY(-65vw);
   }
 }
 
 .FlyUp {
-    animation: FlyUp 12s ease-in infinite forwards
+    animation: FlyUp 10s ease-in infinite forwards
 }
 
 
@@ -20,7 +20,7 @@
 }
 
 .FlyRight {
-    animation: FlyRight 20s ease-in-out 0.3s  infinite alternate;
+    animation: FlyRight 10s ease-in-out 0.3s  infinite alternate;
 }
 
 @keyframes FlyLeft {
@@ -30,7 +30,7 @@
 }
 
 .FlyLeft {
-    animation: FlyLeft 20s ease-in-out 0.3s  infinite alternate;
+    animation: FlyLeft 8s ease-in-out 0.3s  infinite alternate;
 }
 
 

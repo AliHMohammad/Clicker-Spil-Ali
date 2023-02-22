@@ -14,7 +14,7 @@
     font-size: 8vw;
     position: relative;
     top: 10%;
-    left: 30%;
+    left: 28%;
 }
 
 
@@ -35,6 +35,13 @@
 
 #start_button:hover, #help_button:hover{
     scale: 1.1;
+}
+
+#scroll {
+    z-index: 6;
+    position: relative;
+    scale: 0.8;
+    top: -30%;
 }
 
 
