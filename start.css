@@ -33,7 +33,7 @@
     position: relative;
 }
 
-#start_button:hover, #help_button:hover{
+#start_button:hover, #help_button:hover, #Back_button:hover {
     scale: 1.1;
 }
 
@@ -42,6 +42,25 @@
     position: relative;
     scale: 0.8;
     top: -30%;
+}
+
+#start p {
+    font-family: 'VT323', monospace;
+    font-size: 3vw;
+    position: relative;
+    z-index: 7;
+    top: -99%;
+    margin-left: 20%;
+    margin-right: 20%;
+   
+}
+
+#Back_button {
+    top: -107%;
+    left: 62%;
+    width: 20%;
+    z-index: 6;
+    position: relative;
 }
 
 
