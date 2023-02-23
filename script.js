@@ -41,15 +41,15 @@ const restart = document.querySelector("#restart");
 /*==================== GAME INITIATE & RESET =========================*/
 
 function startGame() {
-  baloon1Container.classList.add("FlyUp");
-  baloon2Container.classList.add("FlyUp");
-  baloon3Container.classList.add("FlyUp");
-  baloon4Container.classList.add("FlyUp");
-  airBaloon1Container.classList.add("FlyUp");
-  airBaloon2Container.classList.add("FlyUp");
-  airBaloon3Container.classList.add("FlyUp");
-  airBaloon4Container.classList.add("FlyUp");
-  airBombContainer.classList.add("FlyUp");
+  // baloon1Container.classList.add("FlyUp");
+  // baloon2Container.classList.add("FlyUp");
+  // baloon3Container.classList.add("FlyUp");
+  // baloon4Container.classList.add("FlyUp");
+  // airBaloon1Container.classList.add("FlyUp");
+  // airBaloon2Container.classList.add("FlyUp");
+  // airBaloon3Container.classList.add("FlyUp");
+  // airBaloon4Container.classList.add("FlyUp");
+  // airBombContainer.classList.add("FlyUp");
   timer.classList.remove("hidden");
   timer.classList.add("Timer");
   heartImage.classList.add("pulse");
@@ -119,10 +119,6 @@ function addEventListenerSoundFunction() {
 
 }
 
-
-
-
-
 function startGameSound() {
   wind.play()
 }
@@ -132,14 +128,12 @@ function stopGameSound() {
   wind.currentTime = 0;
 }
 
-
-
 function playAudio(sound) {
   console.log(sound);
   sound.play();
 }
 
-/*==================== ANIMATIONED EVENTS =========================*/
+/*==================== ANIMATIONEND EVENTS =========================*/
 
 function addEventListenerAnimationendFunction() {
 
@@ -177,20 +171,6 @@ function addEventListenerAnimationendFunction() {
 
 /*==================== RESPAWNER & RESETTER =========================*/
 
-function respawn(element, animation, container, sprite) {
-  addEventListenerMousedownFunction(element, animation);
-  container.className = "";
-  sprite.className = "";
-
-  void container.offsetWidth;
-
-  container.classList.add("FlyUp");
-}
-
-function addEventListenerMousedownFunction(element, animation) {
-  element.addEventListener("mousedown", animation);
-}
-
 function resetGameElements() {
   respawn(baloon1Container, pop1, baloon1Container, baloon1Sprite);
   respawn(baloon2Container, pop2, baloon2Container, baloon2Sprite);
@@ -203,6 +183,20 @@ function resetGameElements() {
   respawn(airBaloon4Container, fartRight, airBaloon4Container, airBaloon4Sprite);
 
   respawn(airBombContainer, boom, airBombContainer, airBombSprite);
+}
+
+function respawn(element, animation, container, sprite) {
+  addEventListenerMousedownFunction(element, animation);
+  container.className = "";
+  sprite.className = "";
+
+  void container.offsetWidth;
+
+  container.classList.add("FlyUp");
+}
+
+function addEventListenerMousedownFunction(element, animation) {
+  element.addEventListener("mousedown", animation);
 }
 
 function timerReset() {
