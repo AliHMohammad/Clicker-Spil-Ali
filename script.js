@@ -1,10 +1,5 @@
 "use strict";
 
-
-
-
-
-
 /*==================== ELEMENT VARIABLES =========================*/
 
 let hearts = 3;
@@ -74,6 +69,8 @@ function resetGame() {
   resetGameElements();
   timerReset();
   otherReset();
+  addEventListenerAnimationendFunction();
+  addEventListenerSoundFunction();
 
   airbaloonsShot = 0;
   hearts = 3;
@@ -104,19 +101,24 @@ function resetGame() {
 
 // }
 
-restart.addEventListener("mousedown", resetGame);
+
 
 //======================= GAME ELEMENTS SOUNDEFFECTS ===============================
 
-airBombContainer.addEventListener("mousedown", () => playAudio(explosion));
-baloon1Container.addEventListener("mousedown", () => playAudio(pop));
-baloon2Container.addEventListener("mousedown", () => playAudio(pop));
-baloon3Container.addEventListener("mousedown", () => playAudio(pop));
-baloon4Container.addEventListener("mousedown", () => playAudio(pop));
-airBaloon1Container.addEventListener("mousedown", () => playAudio(deflating));
-airBaloon2Container.addEventListener("mousedown", () => playAudio(deflating));
-airBaloon3Container.addEventListener("mousedown", () => playAudio(deflating));
-airBaloon4Container.addEventListener("mousedown", () => playAudio(deflating));
+function addEventListenerSoundFunction() {
+
+  airBombContainer.addEventListener("mousedown", () => playAudio(explosion));
+  baloon1Container.addEventListener("mousedown", () => playAudio(pop));
+  baloon2Container.addEventListener("mousedown", () => playAudio(pop));
+  baloon3Container.addEventListener("mousedown", () => playAudio(pop));
+  baloon4Container.addEventListener("mousedown", () => playAudio(pop));
+  airBaloon1Container.addEventListener("mousedown", () => playAudio(deflating));
+  airBaloon2Container.addEventListener("mousedown", () => playAudio(deflating));
+  airBaloon3Container.addEventListener("mousedown", () => playAudio(deflating));
+  airBaloon4Container.addEventListener("mousedown", () => playAudio(deflating));
+
+}
+
 
 
 
@@ -139,44 +141,44 @@ function playAudio(sound) {
 
 /*==================== ANIMATIONED EVENTS =========================*/
 
-timer.addEventListener("animationend", timerEnd);
-airBombSprite.addEventListener("animationend", loseScreen);
+function addEventListenerAnimationendFunction() {
 
-baloon1Sprite.addEventListener("animationend", () => {
-  respawn(baloon1Container, pop1, baloon1Container, baloon1Sprite);
-});
-baloon2Sprite.addEventListener("animationend", () => {
-  respawn(baloon2Container, pop2, baloon2Container, baloon2Sprite);
-});
-baloon3Sprite.addEventListener("animationend", () => {
-  respawn(baloon3Container, pop3, baloon3Container, baloon3Sprite);
-});
-baloon4Sprite.addEventListener("animationend", () => {
-  respawn(baloon4Container, pop4, baloon4Container, baloon4Sprite);
-});
+  timer.addEventListener("animationend", timerEnd);
+  airBombSprite.addEventListener("animationend", loseScreen);
 
-airBaloon1Sprite.addEventListener("animationend", () => {
-  respawn(airBaloon1Container, airOutDR, airBaloon1Container, airBaloon1Sprite);
-});
-airBaloon2Sprite.addEventListener("animationend", () => {
-  respawn(airBaloon2Container, airOutDL, airBaloon2Container, airBaloon2Sprite);
-});
-airBaloon3Sprite.addEventListener("animationend", () => {
-  respawn(airBaloon3Container, fartLeft, airBaloon3Container, airBaloon3Sprite);
-});
-airBaloon4Sprite.addEventListener("animationend", () => {
-  respawn(
-    airBaloon4Container,
-    fartRight,
-    airBaloon4Container,
-    airBaloon4Sprite
-  );
-});
+  baloon1Sprite.addEventListener("animationend", () => {
+    respawn(baloon1Container, pop1, baloon1Container, baloon1Sprite);
+  });
+  baloon2Sprite.addEventListener("animationend", () => {
+    respawn(baloon2Container, pop2, baloon2Container, baloon2Sprite);
+  });
+  baloon3Sprite.addEventListener("animationend", () => {
+    respawn(baloon3Container, pop3, baloon3Container, baloon3Sprite);
+  });
+  baloon4Sprite.addEventListener("animationend", () => {
+    respawn(baloon4Container, pop4, baloon4Container, baloon4Sprite);
+  });
+
+  airBaloon1Sprite.addEventListener("animationend", () => {
+    respawn(airBaloon1Container, airOutDR, airBaloon1Container, airBaloon1Sprite);
+  });
+  airBaloon2Sprite.addEventListener("animationend", () => {
+    respawn(airBaloon2Container, airOutDL, airBaloon2Container, airBaloon2Sprite);
+  });
+  airBaloon3Sprite.addEventListener("animationend", () => {
+    respawn(airBaloon3Container, fartLeft, airBaloon3Container, airBaloon3Sprite);
+  });
+  airBaloon4Sprite.addEventListener("animationend", () => {
+    respawn(airBaloon4Container, fartRight, airBaloon4Container, airBaloon4Sprite);
+  });
+
+}
+
 
 /*==================== RESPAWNER & RESETTER =========================*/
 
 function respawn(element, animation, container, sprite) {
-  addEventListenerFunction(element, animation);
+  addEventListenerMousedownFunction(element, animation);
   container.className = "";
   sprite.className = "";
 
@@ -185,7 +187,7 @@ function respawn(element, animation, container, sprite) {
   container.classList.add("FlyUp");
 }
 
-function addEventListenerFunction(element, animation) {
+function addEventListenerMousedownFunction(element, animation) {
   element.addEventListener("mousedown", animation);
 }
 
@@ -198,12 +200,7 @@ function resetGameElements() {
   respawn(airBaloon1Container, airOutDR, airBaloon1Container, airBaloon1Sprite);
   respawn(airBaloon2Container, airOutDL, airBaloon2Container, airBaloon2Sprite);
   respawn(airBaloon3Container, fartLeft, airBaloon3Container, airBaloon3Sprite);
-  respawn(
-    airBaloon4Container,
-    fartRight,
-    airBaloon4Container,
-    airBaloon4Sprite
-  );
+  respawn(airBaloon4Container, fartRight, airBaloon4Container, airBaloon4Sprite);
 
   respawn(airBombContainer, boom, airBombContainer, airBombSprite);
 }
@@ -217,12 +214,15 @@ function timerReset() {
 }
 
 function otherReset() {
+
   document.querySelector("#life_board").className = "";
   document.querySelector("#time_board").className = "";
   document.querySelector("#score_board").className = "";
   document.querySelector("#score_counter").className = "";
   document.querySelector("#game_background").className = "";
   document.querySelector("#restart").className = "";
+
+  restart.addEventListener("mousedown", resetGame);
 }
 
 /*==================== CLICK FUNCTIONS =========================*/
