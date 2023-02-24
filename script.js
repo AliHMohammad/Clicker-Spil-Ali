@@ -420,6 +420,7 @@ document.querySelector("#help_button").addEventListener("click", showHelpScreen)
 document.querySelector("#back_button").addEventListener("click", hideHelpScreen);
 
 function showHelpScreen() {
+  console.log("SHOW");
   document.querySelector("#scroll").classList.remove("hidden");
   document.querySelector("#text1").classList.remove("hidden");
   document.querySelector("#text2").classList.remove("hidden");
@@ -429,6 +430,7 @@ function showHelpScreen() {
 }
 
 function hideHelpScreen() {
+  console.log("HIDE");
   document.querySelector("#scroll").classList.add("hidden");
   document.querySelector("#text1").classList.add("hidden");
   document.querySelector("#text2").classList.add("hidden");
