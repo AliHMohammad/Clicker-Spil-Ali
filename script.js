@@ -244,7 +244,6 @@ function respawnCloudsLeft(container) {
   
 }
 
-
 function addEventListenerMousedownFunction(element, animation) {
   element.addEventListener("mousedown", animation);
 }
