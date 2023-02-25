@@ -1,6 +1,4 @@
 
-
-
 #game_over {
     z-index: 5;
     grid-area: 1 / 1;
@@ -35,4 +33,22 @@
 
 #Menu_Button2:hover, #Retry_Button:hover {
     scale: 1.1;
+}
+
+
+#lose_text {
+    font-family: 'VT323', monospace;
+    font-size: 5vw;
+    position: relative;
+    top: 0%;
+    left: 35%;
+}
+
+#lose_score {
+    color:rgb(255, 0, 0);
+    font-family: 'VT323', monospace;
+    font-size: 6vw;
+    position: relative;
+    top: -10%;
+    left: 46.5%; 
 }

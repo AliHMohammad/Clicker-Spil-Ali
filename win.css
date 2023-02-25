@@ -34,3 +34,20 @@
 #Next_Button:hover, #Menu_Button:hover{
     scale: 1.1;
 }
+
+#win_text {
+    font-family: 'VT323', monospace;
+    font-size: 5vw;
+    position: relative;
+    top: -10%;
+    left: 35%;
+}
+
+#win_score {
+    color:rgb(0, 255, 38);
+    font-family: 'VT323', monospace;
+    font-size: 6vw;
+    position: relative;
+    top: -20%;
+    left: 45%; 
+}

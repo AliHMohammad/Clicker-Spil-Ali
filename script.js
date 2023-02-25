@@ -443,6 +443,9 @@ function hideHelpScreen() {
 function winScreen() {
   console.log("YOU WIN!");
   levelComplete.classList.remove("hidden");
+  document.querySelector("#win_score").textContent = `${score}/20`;
+
+
   stopGameSound();
   playAudio(win_sound);
 }
@@ -466,6 +469,9 @@ document.querySelector("#Next_Button").addEventListener("click", function () {
 function loseScreen() {
   console.log("YOU LOSE!");
   gameOver.classList.remove("hidden");
+  document.querySelector("#lose_score").textContent = `${score}/20`;
+
+
   stopGameSound();
   playAudio(lose_sound);
 }
