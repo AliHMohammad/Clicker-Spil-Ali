@@ -172,16 +172,16 @@ function addEventListenerAnimationendFunction() {
   });
 
   airBaloon1Sprite.addEventListener("animationend", () => {
-    respawn(airBaloon1Container, airOutDR, airBaloon1Container, airBaloon1Sprite);
+    respawn(airBaloon1Container, popAirBalloon, airBaloon1Container, airBaloon1Sprite);
   });
   airBaloon2Sprite.addEventListener("animationend", () => {
-    respawn(airBaloon2Container, airOutDL, airBaloon2Container, airBaloon2Sprite);
+    respawn(airBaloon2Container, popAirBalloon, airBaloon2Container, airBaloon2Sprite);
   });
   airBaloon3Sprite.addEventListener("animationend", () => {
-    respawn(airBaloon3Container, fartLeft, airBaloon3Container, airBaloon3Sprite);
+    respawn(airBaloon3Container, popAirBalloon, airBaloon3Container, airBaloon3Sprite);
   });
   airBaloon4Sprite.addEventListener("animationend", () => {
-    respawn(airBaloon4Container, fartRight, airBaloon4Container, airBaloon4Sprite);
+    respawn(airBaloon4Container, popAirBalloon, airBaloon4Container, airBaloon4Sprite);
   });
 
 }
@@ -197,10 +197,10 @@ function resetGameElements() {
   respawn(baloon3Container, pop, baloon3Container, baloon3Sprite);
   respawn(baloon4Container, pop, baloon4Container, baloon4Sprite);
 
-  respawn(airBaloon1Container, airOutDR, airBaloon1Container, airBaloon1Sprite);
-  respawn(airBaloon2Container, airOutDL, airBaloon2Container, airBaloon2Sprite);
-  respawn(airBaloon3Container, fartLeft, airBaloon3Container, airBaloon3Sprite);
-  respawn(airBaloon4Container, fartRight, airBaloon4Container, airBaloon4Sprite);
+  respawn(airBaloon1Container, popAirBalloon, airBaloon1Container, airBaloon1Sprite);
+  respawn(airBaloon2Container, popAirBalloon, airBaloon2Container, airBaloon2Sprite);
+  respawn(airBaloon3Container, popAirBalloon, airBaloon3Container, airBaloon3Sprite);
+  respawn(airBaloon4Container, popAirBalloon, airBaloon4Container, airBaloon4Sprite);
 
   respawn(airBombContainer, boom, airBombContainer, airBombSprite);
 
@@ -294,64 +294,11 @@ function pop() {
   scoreStatus();
 }
 
-function pop2() {
-  baloon2Container.removeEventListener("mousedown", pop2);
-  baloon2Container.classList.add("paused");
-  baloon2Sprite.classList.add("Pop");
-  scoreStatus();
-}
-
-function pop3() {
-  baloon3Container.removeEventListener("mousedown", pop3);
-  baloon3Container.classList.add("paused");
-  baloon3Sprite.classList.add("Pop");
-  scoreStatus();
-}
-
-function pop4() {
-  baloon4Container.removeEventListener("mousedown", pop4);
-  baloon4Container.classList.add("paused");
-  baloon4Sprite.classList.add("Pop");
-  scoreStatus();
-}
-
-function airOutDR() {
-  airBaloon1Container.removeEventListener("mousedown", airOutDR);
-  airBaloon1Container.classList.add("paused");
-  airBaloon1Sprite.classList.add("AirOut_DownRight");
-
-  hearts--;
-  airbaloonsShot++;
-
-  heartStatus();
-}
-
-function airOutDL() {
-  airBaloon2Container.removeEventListener("mousedown", airOutDL);
-  airBaloon2Container.classList.add("paused");
-  airBaloon2Sprite.classList.add("AirOut_DownLeft");
-
-  hearts--;
-  airbaloonsShot++;
-
-  heartStatus();
-}
-
-function fartLeft() {
-  airBaloon3Container.removeEventListener("mousedown", fartLeft);
-  airBaloon3Container.classList.add("paused");
-  airBaloon3Sprite.classList.add("FartLeft");
-
-  hearts--;
-  airbaloonsShot++;
-
-  heartStatus();
-}
-
-function fartRight() {
-  airBaloon4Container.removeEventListener("mousedown", fartRight);
-  airBaloon4Container.classList.add("paused");
-  airBaloon4Sprite.classList.add("FartRight");
+function popAirBalloon() {
+  let number = Math.floor(Math.random() * 4 + 1);
+  this.removeEventListener("mousedown", popAirBalloon);
+  this.classList.add("paused");
+  this.querySelector("img").classList.add(`airballoonPop${number}`);
 
   hearts--;
   airbaloonsShot++;

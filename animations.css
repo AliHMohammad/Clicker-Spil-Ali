@@ -205,6 +205,25 @@
     animation: FartLeft 1s linear 1 forwards;
 }
 
+/*--------------------------RANDOM AIRBALLOON POP ANIMATION --------------------------------------*/
+
+.airballoonPop1 {
+    animation: AirOut_DownLeft 2s ease-in 1 forwards;
+}
+
+.airballoonPop2 {
+    animation: AirOut_DownRight 2s ease-in 1 forwards;
+}
+
+.airballoonPop3 {
+    animation: FartRight 1s linear 1 forwards;
+}
+
+.airballoonPop4 {
+    animation: FartLeft 1s linear 1 forwards;
+}
+
+
 
 /* --------------------------UI--------------------------------*/
 
