@@ -218,12 +218,25 @@ function resetGameElements() {
 
 function respawn(element, animation, container, sprite) {
   addEventListenerMousedownFunction(element, animation);
+  addEventListenerAnimationIterationNewPosition(element);
   container.className = "";
   sprite.className = "";
 
   void container.offsetWidth;
 
+  addPosition(element);
+  addDelay(element);;
   container.classList.add("FlyUp");
+}
+
+function addPosition(element){
+  let pos = Math.floor(Math.random() * 9 + 1);
+  element.classList.add(`position${pos}`);
+}
+
+function addDelay(element) {
+  let pos = Math.floor(Math.random() * 5 + 1);
+  element.classList.add(`delay${pos}`);
 }
 
 function respawnCloudsRight(container) {
@@ -246,6 +259,10 @@ function respawnCloudsLeft(container) {
 
 function addEventListenerMousedownFunction(element, animation) {
   element.addEventListener("mousedown", animation);
+}
+
+function addEventListenerAnimationIterationNewPosition(element) {
+  element.addEventListener("animationiteration", () => addPosition(element));
 }
 
 function timerReset() {

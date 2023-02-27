@@ -1,16 +1,12 @@
 
 #AirBaloon1_container {
     z-index: 1;
-    top: 115%;
-    left: 65%;
     width: 3%;
     position: absolute;
 }
 
 #AirBaloon2_container {
     z-index: 1;
-    top: 100%;
-    left: 75%;
     width: 3%;
     position: absolute;
     
@@ -18,8 +14,6 @@
 
 #AirBaloon3_container {
     z-index: 1;
-    top: 120%;
-    left: 50%;
     width: 2.5%;
     position: absolute;
     
@@ -27,8 +21,6 @@
 
 #AirBaloon4_container {
     z-index: 1;
-    top: 109%;
-    left: 32%;
     width: 4%;
     position: absolute;
     
