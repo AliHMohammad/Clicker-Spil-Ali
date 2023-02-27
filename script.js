@@ -126,10 +126,10 @@ function resetGame() {
 function addEventListenerSoundFunction() {
 
   airBombContainer.addEventListener("mousedown", () => playAudio(explode));
-  baloon1Container.addEventListener("mousedown", () => playAudio(pop));
-  baloon2Container.addEventListener("mousedown", () => playAudio(pop));
-  baloon3Container.addEventListener("mousedown", () => playAudio(pop));
-  baloon4Container.addEventListener("mousedown", () => playAudio(pop));
+  baloon1Container.addEventListener("mousedown", () => playAudio(popBalloon));
+  baloon2Container.addEventListener("mousedown", () => playAudio(popBalloon));
+  baloon3Container.addEventListener("mousedown", () => playAudio(popBalloon));
+  baloon4Container.addEventListener("mousedown", () => playAudio(popBalloon));
   airBaloon1Container.addEventListener("mousedown", () => playAudio(deflating));
   airBaloon2Container.addEventListener("mousedown", () => playAudio(deflating));
   airBaloon3Container.addEventListener("mousedown", () => playAudio(deflating));
@@ -159,16 +159,16 @@ function addEventListenerAnimationendFunction() {
   airBombSprite.addEventListener("animationend", bombExploded);
 
   baloon1Sprite.addEventListener("animationend", () => {
-    respawn(baloon1Container, pop1, baloon1Container, baloon1Sprite);
+    respawn(baloon1Container, pop, baloon1Container, baloon1Sprite);
   });
   baloon2Sprite.addEventListener("animationend", () => {
-    respawn(baloon2Container, pop2, baloon2Container, baloon2Sprite);
+    respawn(baloon2Container, pop, baloon2Container, baloon2Sprite);
   });
   baloon3Sprite.addEventListener("animationend", () => {
-    respawn(baloon3Container, pop3, baloon3Container, baloon3Sprite);
+    respawn(baloon3Container, pop, baloon3Container, baloon3Sprite);
   });
   baloon4Sprite.addEventListener("animationend", () => {
-    respawn(baloon4Container, pop4, baloon4Container, baloon4Sprite);
+    respawn(baloon4Container, pop, baloon4Container, baloon4Sprite);
   });
 
   airBaloon1Sprite.addEventListener("animationend", () => {
@@ -192,10 +192,10 @@ function addEventListenerAnimationendFunction() {
 /*==================== RESPAWNER & RESETTER =========================*/
 
 function resetGameElements() {
-  respawn(baloon1Container, pop1, baloon1Container, baloon1Sprite);
-  respawn(baloon2Container, pop2, baloon2Container, baloon2Sprite);
-  respawn(baloon3Container, pop3, baloon3Container, baloon3Sprite);
-  respawn(baloon4Container, pop4, baloon4Container, baloon4Sprite);
+  respawn(baloon1Container, pop, baloon1Container, baloon1Sprite);
+  respawn(baloon2Container, pop, baloon2Container, baloon2Sprite);
+  respawn(baloon3Container, pop, baloon3Container, baloon3Sprite);
+  respawn(baloon4Container, pop, baloon4Container, baloon4Sprite);
 
   respawn(airBaloon1Container, airOutDR, airBaloon1Container, airBaloon1Sprite);
   respawn(airBaloon2Container, airOutDL, airBaloon2Container, airBaloon2Sprite);
@@ -287,10 +287,10 @@ function otherReset() {
 
 /*==================== CLICK FUNCTIONS =========================*/
 
-function pop1() {
-  baloon1Container.removeEventListener("mousedown", pop1);
-  baloon1Container.classList.add("paused");
-  baloon1Sprite.classList.add("Pop");
+function pop() {
+  this.removeEventListener("mousedown", pop);
+  this.classList.add("paused");
+  this.querySelector("img").classList.add("Pop");
   scoreStatus();
 }
 
