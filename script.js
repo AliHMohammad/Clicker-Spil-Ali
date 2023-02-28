@@ -235,8 +235,8 @@ function addPosition(element){
 }
 
 function addDelay(element) {
-  let pos = Math.floor(Math.random() * 5 + 1);
-  element.classList.add(`delay${pos}`);
+  let del = Math.floor(Math.random() * 5 + 1);
+  element.classList.add(`delay${del}`);
 }
 
 function respawnCloudsRight(container) {
