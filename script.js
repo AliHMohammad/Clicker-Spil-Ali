@@ -150,14 +150,18 @@ function stopGameSound() {
 
 function playAudio(sound) {
   console.log(sound);
+  
+  
   sound.currentTime = 0;
   sound.play();
 
   switch (score) {
-    case 21:
+    case 20:
       document.querySelector("#twennyWan").play();
       break;
   }
+
+  
 }
 
 /*==================== ANIMATIONEND EVENTS =========================*/
@@ -467,7 +471,7 @@ document.querySelector("#Menu_Button").addEventListener("click", function () {
 document.querySelector("#Next_Button").addEventListener("click", function () {
   console.log("Play again");
   resetGame();
-  startGameSound();
+  //startGameSound();
   levelComplete.classList.add("hidden");
 });
 
@@ -493,6 +497,6 @@ document.querySelector("#Menu_Button2").addEventListener("click", function () {
 document.querySelector("#Retry_Button").addEventListener("click", function () {
   console.log("Play again");
   resetGame();
-  startGameSound();
+  //startGameSound();
   gameOver.classList.add("hidden");
 });
