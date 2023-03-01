@@ -138,16 +138,17 @@ function addEventListenerSoundFunction() {
 }
 
 function startGameSound() {
-  wind.play()
+  gameSound.play()
 }
 
 function stopGameSound() {
-  wind.pause();
-  wind.currentTime = 0;
+  gameSound.pause();
+  gameSound.currentTime = 0;
 }
 
 function playAudio(sound) {
   console.log(sound);
+  sound.currentTime = 0;
   sound.play();
 }
 
@@ -310,6 +311,8 @@ function boom() {
   airBombContainer.removeEventListener("mousedown", boom);
   airBombContainer.classList.add("paused");
   airBombSprite.classList.add("Explosion");
+
+  stopGameSound();
 
   document.querySelector("#life_board").classList.add("Shake");
   document.querySelector("#time_board").classList.add("Shake");
