@@ -56,7 +56,7 @@ let restart;
 
 function declareVariables() {
 
-  levelComplete = document.querySelector("#Level_Complete");
+  levelComplete = document.querySelector("#level_complete");
   gameOver = document.querySelector("#game_over");
 
   baloon1Sprite = document.querySelector("#Baloon1_sprite");
