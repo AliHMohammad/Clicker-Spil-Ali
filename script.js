@@ -118,6 +118,8 @@ function resetGame() {
 
   score = 0;
   document.querySelector("#score_counter").textContent = `${score}/20`;
+
+  startGameSound();
 }
 
 
@@ -138,18 +140,24 @@ function addEventListenerSoundFunction() {
 }
 
 function startGameSound() {
+  gameSound.currentTime = 0;
   gameSound.play()
 }
 
 function stopGameSound() {
   gameSound.pause();
-  gameSound.currentTime = 0;
 }
 
 function playAudio(sound) {
   console.log(sound);
   sound.currentTime = 0;
   sound.play();
+
+  switch (score) {
+    case 21:
+      document.querySelector("#twennyWan").play();
+      break;
+  }
 }
 
 /*==================== ANIMATIONEND EVENTS =========================*/
@@ -185,7 +193,28 @@ function addEventListenerAnimationendFunction() {
     respawn(airBaloon4Container, popAirBalloon, airBaloon4Container, airBaloon4Sprite);
   });
 
+  baloon1Container.addEventListener("animationiteration", respawnBalloon);
+  baloon2Container.addEventListener("animationiteration", respawnBalloon);
+  baloon3Container.addEventListener("animationiteration", respawnBalloon);
+  baloon4Container.addEventListener("animationiteration", respawnBalloon);
+
+  airBaloon1Container.addEventListener("animationiteration", respawnAirBalloon);
+  airBaloon2Container.addEventListener("animationiteration", respawnAirBalloon);
+  airBaloon3Container.addEventListener("animationiteration", respawnAirBalloon);
+  airBaloon4Container.addEventListener("animationiteration", respawnAirBalloon);
+  
 }
+
+function respawnBalloon() {
+  respawn(this, pop, this, this.querySelector("img"));
+}
+
+function respawnAirBalloon() {
+  respawn(this, popAirBalloon, this, this.querySelector("img"));
+}
+
+
+
 
 
 
@@ -230,7 +259,18 @@ function respawn(element, animation, container, sprite) {
   container.classList.add("FlyUp");
 }
 
-function addPosition(element){
+function addPosition(element) {
+  element.classList.remove(
+    "position1",
+    "position2",
+    "position3",
+    "position4",
+    "position5",
+    "position6",
+    "position7",
+    "position8",
+    "position9"
+  );
   let pos = Math.floor(Math.random() * 9 + 1);
   element.classList.add(`position${pos}`);
 }
@@ -361,6 +401,7 @@ function heartStatus() {
   } else if (hearts == 1) {
     heartImage.src = "./UI/HealthOne.png";
     heartImage.classList.add("pulse_1hearts");
+    document.querySelector("#milk").play();
   } else if (hearts <= 0) {
     heartImage.src = "./UI/HealthZero.png";
     heartImage.classList.add("pulse_0hearts");
