@@ -1,6 +1,7 @@
 "use strict";
 
-window.addEventListener("load", declareVariables);
+window.addEventListener("load", initialize);
+
 
 /*==================== ELEMENT VARIABLES =========================*/
 
@@ -54,8 +55,7 @@ let restart;
 
 /*==================== ON WINDOW LOAD DECLARE VARIABLES =========================*/
 
-function declareVariables() {
-
+function initialize() {
   levelComplete = document.querySelector("#Level_Complete");
   gameOver = document.querySelector("#game_over");
 
@@ -96,13 +96,12 @@ function declareVariables() {
   heartImage = document.querySelector("#life_board");
 
   restart = document.querySelector("#restart");
-
 }
 
 
 /*==================== GAME INITIATE & RESET =========================*/
 
-function resetGame() {
+function startGame() {
   timer.classList.remove("hidden");
   resetGameElements();
   timerReset();
@@ -327,7 +326,7 @@ function otherReset() {
   document.querySelector("#game_background").className = "";
   document.querySelector("#restart").className = "";
 
-  restart.addEventListener("mousedown", resetGame);
+  restart.addEventListener("mousedown", startGame);
 }
 
 /*==================== CLICK FUNCTIONS =========================*/
@@ -422,8 +421,8 @@ function heartStatus() {
 document.querySelector("#start_button").addEventListener("click", function () {
   console.log("START!");
   document.querySelector("#start").classList.add("hidden");
-  resetGame();
-  startGameSound();
+  startGame();
+  
 
 });
 
@@ -470,7 +469,7 @@ document.querySelector("#Menu_Button").addEventListener("click", function () {
 
 document.querySelector("#Next_Button").addEventListener("click", function () {
   console.log("Play again");
-  resetGame();
+  startGame();
   //startGameSound();
   levelComplete.classList.add("hidden");
 });
@@ -496,7 +495,7 @@ document.querySelector("#Menu_Button2").addEventListener("click", function () {
 
 document.querySelector("#Retry_Button").addEventListener("click", function () {
   console.log("Play again");
-  resetGame();
+  startGame();
   //startGameSound();
   gameOver.classList.add("hidden");
 });
