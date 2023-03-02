@@ -422,11 +422,28 @@ function heartStatus() {
 
 document.querySelector("#start_button").addEventListener("click", function () {
   console.log("START!");
-  document.querySelector("#start").classList.add("hidden");
+  //document.querySelector("#start").classList.add("hidden");
+
+  document.querySelector("#start").classList.add("transition_out");
+
+  document.querySelector("#start").addEventListener("animationend", transitionOut)
+
   startGame();
   
 
 });
+
+function transitionOut() {
+  this.classList.add("hidden");
+  this.classList.remove("transition_out", "transition_in");
+  this.removeEventListener("animationend", transitionOut);
+}
+
+
+function transitionIn() {
+  this.classList.remove("transition_out", "transition_in");
+  this.removeEventListener("animationend", transitionIn);
+}
 
 document.querySelector("#help_button").addEventListener("click", showHelpScreen);
 document.querySelector("#back_button").addEventListener("click", hideHelpScreen);
@@ -455,6 +472,11 @@ function hideHelpScreen() {
 function winScreen() {
   console.log("YOU WIN!");
   levelComplete.classList.remove("hidden");
+
+  levelComplete.classList.add("transition_in");
+
+  levelComplete.addEventListener("animationend", transitionIn);
+
   document.querySelector("#win_score").textContent = `${score}/20`;
 
 
@@ -465,15 +487,27 @@ function winScreen() {
 document.querySelector("#Menu_Button").addEventListener("click", function () {
   console.log("Back to menu");
   document.querySelector("#start").classList.remove("hidden");
-  levelComplete.classList.add("hidden");
+
+  document.querySelector("#level_complete").classList.add("transition_out");
+
+  document.querySelector("#level_complete").addEventListener("animationend", transitionOut)
+
+
+  //levelComplete.classList.add("hidden");
   //main menu sound
 });
 
 document.querySelector("#Next_Button").addEventListener("click", function () {
   console.log("Play again");
+
+
+  document.querySelector("#level_complete").classList.add("transition_out");
+
+  document.querySelector("#level_complete").addEventListener("animationend", transitionOut)
+
   startGame();
   //startGameSound();
-  levelComplete.classList.add("hidden");
+  //levelComplete.classList.add("hidden");
 });
 
 /*==================== LOSE SCREEN =========================*/
@@ -481,6 +515,11 @@ document.querySelector("#Next_Button").addEventListener("click", function () {
 function loseScreen() {
   console.log("YOU LOSE!");
   gameOver.classList.remove("hidden");
+
+  gameOver.classList.add("transition_in");
+
+  gameOver.addEventListener("animationend", transitionIn)
+
   document.querySelector("#lose_score").textContent = `${score}/20`;
 
 
@@ -491,13 +530,24 @@ function loseScreen() {
 document.querySelector("#Menu_Button2").addEventListener("click", function () {
   console.log("Back to menu");
   document.querySelector("#start").classList.remove("hidden");
-  gameOver.classList.add("hidden");
+
+  document.querySelector("#game_over").classList.add("transition_out");
+
+  document.querySelector("#game_over").addEventListener("animationend", transitionOut)
+
+  //gameOver.classList.add("hidden");
   //main menu sound
 });
 
 document.querySelector("#Retry_Button").addEventListener("click", function () {
   console.log("Play again");
+
+  document.querySelector("#game_over").classList.add("transition_out");
+
+  document.querySelector("#game_over").addEventListener("animationend", transitionOut)
+
+
   startGame();
   //startGameSound();
-  gameOver.classList.add("hidden");
+  //gameOver.classList.add("hidden");
 });
