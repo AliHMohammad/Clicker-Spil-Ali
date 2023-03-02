@@ -337,3 +337,25 @@
 .transition_out {
     animation: transition 0.5s linear 1 reverse forwards;
 }
+
+
+
+@keyframes title_fly_up {
+    0% {
+        transform: translateY(56vw)
+    } 
+}
+
+.title_fly_up {
+    animation: title_fly_up 5s ease-in-out 1 forwards;
+}
+
+@keyframes girl_fly_up {
+    0% {
+        transform: translateY(420%)
+    } 
+}
+
+.girl_fly_up {
+    animation: girl_fly_up 5s ease-in-out 1 forwards;;
+}

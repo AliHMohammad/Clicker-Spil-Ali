@@ -58,6 +58,9 @@ let restart;
 
 function initialize() {
 
+  document.querySelector("#Game_Title").classList.add("title_fly_up");
+  document.querySelector("#girl").classList.add("girl_fly_up");
+
   levelComplete = document.querySelector("#level_complete");
   gameOver = document.querySelector("#game_over");
 

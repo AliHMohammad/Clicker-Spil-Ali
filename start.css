@@ -27,6 +27,7 @@
 }
 
 #help_button{
+    z-index: 5;
     top: 35%;
     left: 11%;
     width: 20%;
