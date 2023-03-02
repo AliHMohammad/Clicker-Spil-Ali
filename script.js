@@ -101,7 +101,7 @@ function initialize() {
 }
 
 
-/*==================== GAME INITIATE & RESET =========================*/
+/*==================== GAME INITIATE & STOP =========================*/
 
 function startGame() {
   timer.classList.remove("hidden");
@@ -123,6 +123,29 @@ function startGame() {
   startGameSound();
 }
 
+function stopGame() {
+
+  baloon1Container.className = "hidden";
+  baloon2Container.className = "hidden";
+  baloon3Container.className = "hidden";
+  baloon4Container.className = "hidden";
+
+  airBaloon1Container.className = "hidden";
+  airBaloon2Container.className = "hidden";
+  airBaloon3Container.className = "hidden";
+  airBaloon4Container.className = "hidden";
+
+  airBombContainer.className = "hidden";
+  cloud1Container.className = "hidden";
+  cloud2Container.className = "hidden";
+  cloud3Container.className = "hidden";
+  cloud4Container.className = "hidden";
+  cloud5Container.className = "hidden";
+  cloud6Container.className = "hidden";
+  cloud7Container.className = "hidden";
+  cloud8Container.className = "hidden";
+
+}
 
 //======================= GAME ELEMENTS SOUNDEFFECTS ===============================
 
@@ -161,8 +184,7 @@ function playAudio(sound) {
       document.querySelector("#twennyWan").play();
       break;
   }
-
-  
+ 
 }
 
 /*==================== ANIMATIONEND EVENTS =========================*/
@@ -217,11 +239,6 @@ function respawnBalloon() {
 function respawnAirBalloon() {
   respawn(this, popAirBalloon, this, this.querySelector("img"));
 }
-
-
-
-
-
 
 
 /*==================== RESPAWNER & RESETTER =========================*/
@@ -418,20 +435,7 @@ function heartStatus() {
   }
 }
 
-/*==================== START SCREEN =========================*/
-
-document.querySelector("#start_button").addEventListener("click", function () {
-  console.log("START!");
-  //document.querySelector("#start").classList.add("hidden");
-
-  document.querySelector("#start").classList.add("transition_out");
-
-  document.querySelector("#start").addEventListener("animationend", transitionOut)
-
-  startGame();
-  
-
-});
+/*==================== GAME SCREEN TRANSITIONS =========================*/
 
 function transitionOut() {
   this.classList.add("hidden");
@@ -439,11 +443,22 @@ function transitionOut() {
   this.removeEventListener("animationend", transitionOut);
 }
 
-
 function transitionIn() {
   this.classList.remove("transition_out", "transition_in");
   this.removeEventListener("animationend", transitionIn);
 }
+
+/*==================== START SCREEN =========================*/
+
+document.querySelector("#start_button").addEventListener("click", function () {
+  console.log("START!");
+  //document.querySelector("#start").classList.add("hidden");
+
+  document.querySelector("#start").classList.add("transition_out");
+  document.querySelector("#start").addEventListener("animationend", transitionOut)
+
+  startGame();
+});
 
 document.querySelector("#help_button").addEventListener("click", showHelpScreen);
 document.querySelector("#back_button").addEventListener("click", hideHelpScreen);
@@ -471,25 +486,25 @@ function hideHelpScreen() {
 
 function winScreen() {
   console.log("YOU WIN!");
+  stopGame();
+  stopGameSound();
   levelComplete.classList.remove("hidden");
 
   levelComplete.classList.add("transition_in");
-
   levelComplete.addEventListener("animationend", transitionIn);
 
   document.querySelector("#win_score").textContent = `${score}/20`;
 
 
-  stopGameSound();
   playAudio(win_sound);
 }
 
 document.querySelector("#Menu_Button").addEventListener("click", function () {
+
   console.log("Back to menu");
   document.querySelector("#start").classList.remove("hidden");
 
   document.querySelector("#level_complete").classList.add("transition_out");
-
   document.querySelector("#level_complete").addEventListener("animationend", transitionOut)
 
 
@@ -498,11 +513,11 @@ document.querySelector("#Menu_Button").addEventListener("click", function () {
 });
 
 document.querySelector("#Next_Button").addEventListener("click", function () {
+
   console.log("Play again");
 
 
   document.querySelector("#level_complete").classList.add("transition_out");
-
   document.querySelector("#level_complete").addEventListener("animationend", transitionOut)
 
   startGame();
@@ -513,26 +528,27 @@ document.querySelector("#Next_Button").addEventListener("click", function () {
 /*==================== LOSE SCREEN =========================*/
 
 function loseScreen() {
+
   console.log("YOU LOSE!");
+  stopGame();
+  stopGameSound();
   gameOver.classList.remove("hidden");
 
   gameOver.classList.add("transition_in");
-
   gameOver.addEventListener("animationend", transitionIn)
 
   document.querySelector("#lose_score").textContent = `${score}/20`;
 
 
-  stopGameSound();
   playAudio(lose_sound);
 }
 
 document.querySelector("#Menu_Button2").addEventListener("click", function () {
+
   console.log("Back to menu");
   document.querySelector("#start").classList.remove("hidden");
 
   document.querySelector("#game_over").classList.add("transition_out");
-
   document.querySelector("#game_over").addEventListener("animationend", transitionOut)
 
   //gameOver.classList.add("hidden");
@@ -540,10 +556,10 @@ document.querySelector("#Menu_Button2").addEventListener("click", function () {
 });
 
 document.querySelector("#Retry_Button").addEventListener("click", function () {
+
   console.log("Play again");
 
   document.querySelector("#game_over").classList.add("transition_out");
-
   document.querySelector("#game_over").addEventListener("animationend", transitionOut)
 
 
