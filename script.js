@@ -168,6 +168,7 @@ function addEventListenerSoundFunction() {
 
 function startGameSound() {
   gameSound.currentTime = 0;
+  gameSound.volume = 0.7;
   gameSound.play()
 }
 
@@ -178,6 +179,11 @@ function stopGameSound() {
 function playAudio(sound) {
   console.log(sound);
   
+  
+  if (sound == popBalloon || sound == deflating) {
+    sound.volume = 0.5;
+    
+  }
   
   sound.currentTime = 0;
   sound.play();

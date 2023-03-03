@@ -14,7 +14,7 @@
     font-size: 8vw;
     position: relative;
     top: 10%;
-    left: 28%;
+    left: 27%;
 }
 
 
@@ -41,36 +41,37 @@
 #girl {
     position: relative;
     top: -154.5%;
-    left: -4.4%;
+    left: -5.41%;
     scale: 0.1;
 }
+
 
 #scroll {
     z-index: 6;
     position: relative;
     scale: 0.8;
-    top: -270%;
+    top: -268%;
 }
+
 
 #start p {
     font-family: 'VT323', monospace;
     font-size: 3vw;
     position: relative;
     z-index: 7;
-    top: -338%;
+    top: -336%;
     margin-left: 20%;
     margin-right: 20%;
    
 }
 
 #back_button {
-    top: -345%;
+    top: -343%;
     left: 62%;
     width: 20%;
     z-index: 6;
     position: relative;
 }
-
 
 
 /*
@@ -87,3 +88,10 @@
 }
 */
 
+
+
+
+
+/*
+
+*/
