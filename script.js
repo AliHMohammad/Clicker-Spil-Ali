@@ -401,7 +401,7 @@ function boom() {
 /*==================== GAME STATUS =========================*/
 
 function timerEnd() {
-  if (score >= 20) {
+  if (score >= 20 && hearts > 0) {
     winScreen();
   } else {
     loseScreen();
