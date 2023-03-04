@@ -546,6 +546,8 @@ function loseScreen() {
   gameOver.classList.add("transition_in");
   gameOver.addEventListener("animationend", transitionIn)
 
+  
+
   document.querySelector("#lose_score").textContent = `${score}/20`;
 
 

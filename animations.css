@@ -110,9 +110,6 @@
     }
 }
 
-.AirOut_DownLeft {
-    animation: AirOut_DownLeft 2s ease-in 1 forwards;
-}
 
 @keyframes AirOut_DownRight { 
     10% {
@@ -155,9 +152,7 @@
     }
 }
 
-.AirOut_DownRight {
-    animation: AirOut_DownRight 2s ease-in 1 forwards;
-}
+
 
 @keyframes FartRight {
     10% {
@@ -178,9 +173,7 @@
     }
 }
 
-.FartRight {
-    animation: FartRight 1s linear 1 forwards;
-}
+
 
 @keyframes FartLeft {
     10% {
@@ -201,9 +194,6 @@
     }
 }
 
-.FartLeft {
-    animation: FartLeft 1s linear 1 forwards;
-}
 
 /*--------------------------RANDOM AIRBALLOON POP ANIMATION --------------------------------------*/
 
@@ -339,6 +329,7 @@
 }
 
 
+/* -------------------------- GAME START ANIMATIONS --------------------------------*/
 
 @keyframes title_fly_up {
     0% {
