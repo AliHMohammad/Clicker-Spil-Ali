@@ -461,7 +461,6 @@ function transitionIn() {
 
 document.querySelector("#start_button").addEventListener("click", function () {
   console.log("START!");
-  //document.querySelector("#start").classList.add("hidden");
 
   document.querySelector("#start").classList.add("transition_out");
   document.querySelector("#start").addEventListener("animationend", transitionOut)
@@ -504,7 +503,6 @@ function winScreen() {
 
   document.querySelector("#win_score").textContent = `${score}/20`;
 
-
   playAudio(win_sound);
 }
 
@@ -515,10 +513,6 @@ document.querySelector("#Menu_Button").addEventListener("click", function () {
 
   document.querySelector("#level_complete").classList.add("transition_out");
   document.querySelector("#level_complete").addEventListener("animationend", transitionOut)
-
-
-  //levelComplete.classList.add("hidden");
-  //main menu sound
 });
 
 document.querySelector("#Next_Button").addEventListener("click", function () {
@@ -530,8 +524,6 @@ document.querySelector("#Next_Button").addEventListener("click", function () {
   document.querySelector("#level_complete").addEventListener("animationend", transitionOut)
 
   startGame();
-  //startGameSound();
-  //levelComplete.classList.add("hidden");
 });
 
 /*==================== LOSE SCREEN =========================*/
@@ -562,8 +554,6 @@ document.querySelector("#Menu_Button2").addEventListener("click", function () {
   document.querySelector("#game_over").classList.add("transition_out");
   document.querySelector("#game_over").addEventListener("animationend", transitionOut)
 
-  //gameOver.classList.add("hidden");
-  //main menu sound
 });
 
 document.querySelector("#Retry_Button").addEventListener("click", function () {
@@ -575,6 +565,5 @@ document.querySelector("#Retry_Button").addEventListener("click", function () {
 
 
   startGame();
-  //startGameSound();
-  //gameOver.classList.add("hidden");
+  
 });
