@@ -379,9 +379,9 @@ function popAirBalloon() {
 }
 
 function boom() {
-  airBombContainer.removeEventListener("mousedown", boom);
-  airBombContainer.classList.add("paused");
-  airBombSprite.classList.add("Explosion");
+  this.removeEventListener("mousedown", boom);
+  this.classList.add("paused");
+  this.querySelector("img").classList.add("Explosion");
 
   stopGameSound();
 
