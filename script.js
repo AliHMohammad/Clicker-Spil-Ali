@@ -52,11 +52,11 @@ let heartImage;
 
 let restart;
 
-document.querySelector("#Game_Title").classList.add("title_fly_up");
-document.querySelector("#girl").classList.add("girl_fly_up");
 
 /*==================== ON WINDOW LOAD DECLARE VARIABLES =========================*/
 
+document.querySelector("#Game_Title").classList.add("title_fly_up");
+document.querySelector("#girl").classList.add("girl_fly_up");
 
 function initialize() {
 
@@ -111,8 +111,8 @@ function startGame() {
   resetGameElements();
   timerReset();
   otherReset();
-  addEventListenerAnimationendFunction();
-  addEventListenerSoundFunction();
+  addEventListenerAnimationend();
+  addEventListenerSound();
 
   airbaloonsShot = 0;
   explosion = false;
@@ -152,7 +152,7 @@ function stopGame() {
 
 //======================= GAME ELEMENTS SOUNDEFFECTS ===============================
 
-function addEventListenerSoundFunction() {
+function addEventListenerSound() {
 
   airBombContainer.addEventListener("mousedown", () => playAudio(explode));
   baloon1Container.addEventListener("mousedown", () => playAudio(popBalloon));
@@ -198,7 +198,7 @@ function playAudio(sound) {
 
 /*==================== ANIMATIONEND EVENTS =========================*/
 
-function addEventListenerAnimationendFunction() {
+function addEventListenerAnimationend() {
 
   timer.addEventListener("animationend", timerEnd);
   airBombSprite.addEventListener("animationend", bombExploded);
@@ -278,8 +278,8 @@ function resetGameElements() {
 }
 
 function respawn(element, animation, container, sprite) {
-  addEventListenerMousedownFunction(element, animation);
-  addEventListenerAnimationIterationNewPosition(element);
+  addEventListenerMousedown(element, animation);
+  addEventListenerAnimationIteration(element);
   container.className = "";
   sprite.className = "";
 
@@ -329,11 +329,11 @@ function respawnCloudsLeft(container) {
   
 }
 
-function addEventListenerMousedownFunction(element, animation) {
+function addEventListenerMousedown(element, animation) {
   element.addEventListener("mousedown", animation);
 }
 
-function addEventListenerAnimationIterationNewPosition(element) {
+function addEventListenerAnimationIteration(element) {
   element.addEventListener("animationiteration", () => addPosition(element));
 }
 
