@@ -188,12 +188,6 @@ function playAudio(sound) {
   sound.currentTime = 0;
   sound.play();
 
-  switch (score) {
-    case 20:
-      document.querySelector("#twennyWan").play();
-      break;
-  }
- 
 }
 
 /*==================== ANIMATIONEND EVENTS =========================*/
@@ -432,7 +426,6 @@ function heartStatus() {
   } else if (hearts == 1) {
     heartImage.src = "./UI/HealthOne.png";
     heartImage.classList.add("pulse_1hearts");
-    document.querySelector("#milk").play();
   } else if (hearts <= 0) {
     heartImage.src = "./UI/HealthZero.png";
     heartImage.classList.add("pulse_0hearts");
