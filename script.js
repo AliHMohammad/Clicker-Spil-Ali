@@ -177,9 +177,6 @@ function stopGameSound() {
 }
 
 function playAudio(sound) {
-  console.log(sound);
-  
-  
   if (sound == popBalloon || sound == deflating) {
     sound.volume = 0.5;
     
@@ -453,7 +450,6 @@ function transitionIn() {
 /*==================== START SCREEN =========================*/
 
 document.querySelector("#start_button").addEventListener("click", function () {
-  console.log("START!");
 
   document.querySelector("#start").classList.add("transition_out");
   document.querySelector("#start").addEventListener("animationend", transitionOut)
@@ -465,7 +461,7 @@ document.querySelector("#help_button").addEventListener("click", showHelpScreen)
 document.querySelector("#back_button").addEventListener("click", hideHelpScreen);
 
 function showHelpScreen() {
-  console.log("SHOW");
+
   document.querySelector("#scroll").classList.remove("hidden");
   document.querySelector("#text1").classList.remove("hidden");
   document.querySelector("#text2").classList.remove("hidden");
@@ -475,7 +471,7 @@ function showHelpScreen() {
 }
 
 function hideHelpScreen() {
-  console.log("HIDE");
+  
   document.querySelector("#scroll").classList.add("hidden");
   document.querySelector("#text1").classList.add("hidden");
   document.querySelector("#text2").classList.add("hidden");
@@ -486,7 +482,7 @@ function hideHelpScreen() {
 /*==================== WIN SCREEN =========================*/
 
 function winScreen() {
-  console.log("YOU WIN!");
+  
   stopGame();
   stopGameSound();
   levelComplete.classList.remove("hidden");
@@ -501,7 +497,7 @@ function winScreen() {
 
 document.querySelector("#Menu_Button").addEventListener("click", function () {
 
-  console.log("Back to menu");
+  
   document.querySelector("#start").classList.remove("hidden");
 
   document.querySelector("#level_complete").classList.add("transition_out");
@@ -509,9 +505,6 @@ document.querySelector("#Menu_Button").addEventListener("click", function () {
 });
 
 document.querySelector("#Next_Button").addEventListener("click", function () {
-
-  console.log("Play again");
-
 
   document.querySelector("#level_complete").classList.add("transition_out");
   document.querySelector("#level_complete").addEventListener("animationend", transitionOut)
@@ -523,7 +516,6 @@ document.querySelector("#Next_Button").addEventListener("click", function () {
 
 function loseScreen() {
 
-  console.log("YOU LOSE!");
   stopGame();
   stopGameSound();
   gameOver.classList.remove("hidden");
@@ -541,7 +533,6 @@ function loseScreen() {
 
 document.querySelector("#Menu_Button2").addEventListener("click", function () {
 
-  console.log("Back to menu");
   document.querySelector("#start").classList.remove("hidden");
 
   document.querySelector("#game_over").classList.add("transition_out");
@@ -550,8 +541,6 @@ document.querySelector("#Menu_Button2").addEventListener("click", function () {
 });
 
 document.querySelector("#Retry_Button").addEventListener("click", function () {
-
-  console.log("Play again");
 
   document.querySelector("#game_over").classList.add("transition_out");
   document.querySelector("#game_over").addEventListener("animationend", transitionOut)
